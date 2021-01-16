@@ -1,0 +1,105 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 1, 2020
+ *      Author: Ahmed Mohamed
+ */
+
+#include "ADC.h"
+#include "lcd.h"
+#include "micro_config.h"
+
+
+ISR(INT1_vect){
+	/* change the direction of the motor */
+	//PORTB ^= (1<<PB1);
+	//PORTB ^= (1<<PB2);
+	TOGGLE_BIT(PORTB,PB1);
+	TOGGLE_BIT(PORTB,PB2);
+}
+
+void INT1_init(void){
+	/* set PD2 as input */
+	//DDRD &= ~(1<<PD3);
+	CLEAR_BIT(DDRD,PD3);
+
+	/* generate inturrpt with the falling edge */
+	//MCUCR |= (1<<ISC10) | (1<<ISC11);
+	SET_BIT(MCUCR, ISC10);
+	SET_BIT(MCUCR, ISC11);
+
+	/* enable INT0 */
+	//GICR |= (1<<INT1);
+	SET_BIT(GICR, INT1);
+
+}
+
+void PWM_Timer0_Init()
+{
+
+	TCNT0 = 0; 		/* Set Timer Initial value */
+	OCR0 = data/4; 		/* Set Compare Value */
+
+	/* set PB3/OC0 as output pin --> pin where the PWM signal is generated from MC */
+	//DDRB |= (1<<PB3);
+	SET_BIT(DDRB, PB3);
+
+
+	/* Configure timer control register
+	 * 1. Fast PWM mode FOC0=0
+	 * 2. Fast PWM Mode WGM01=1 & WGM00=1
+	 * 3. Clear OC0 when match occurs (non inverted mode) COM00=0 & COM01=1
+	 * 4. clock = F_CPU/8 CS00=0 CS01=1 CS02=0
+	 */
+
+	//TCCR0 = (1<<WGM00) | (1<<WGM01) | (1<<COM01) | (1<<CS01);
+	SET_BIT(TCCR0, WGM00);
+	SET_BIT(TCCR0, WGM01);
+	SET_BIT(TCCR0, COM01);
+	SET_BIT(TCCR0, CS01);
+
+}
+
+
+
+
+
+int main(void)
+{
+	SET_BIN(SREG,7);	/* enable I-bit */
+	/* SREG = (1<<7); */	
+
+	INT1_init();	/* initialize INTERRUPT 1 */
+	LCD_init(); 	/* initialize LCD driver */
+	ADC_init();	/* initialize ADC driver */
+
+	ADC_readchannel(PA0);	/* READ initial potentiometer value (PWM duty cycle) */
+	PWM_Timer0_Init(); 	/* initialize TIMER driver on PWM mode with duty cycle changes with the reading of the Potentiometer */
+
+	/* configure pin PB1 and PB2 as output pins (control the motor direction)*/
+	//DDRB |= 0x06;
+	SET_BIT(DDRB,PB1);
+	SET_BIT(DDRB,PB2);
+
+	/* Motor is stop at the beginning */
+	//PORTB &= (~(1<<PC1));
+	//PORTB |= (1<<PC2);
+	CLEAR_BIT(PORTB,PC1);
+	SET_BIT(PORTB,PC2);
+
+	LCD_clearScreen(); /* clear LCD at the beginning */
+	/* display this string "ADC Value = " only once at LCD */
+	LCD_displayString("ADC Value = ");
+
+    while(1)
+    {
+    	LCD_goToRowColumn(0,12); /* display the number every time at this position */
+    	ADC_readchannel(PA0);	/* READ the ADC value */
+    	LCD_intgerToString(data); /* display the ADC value on LCD screen */
+
+    	OCR0 = data/4; /* changes the duty cycle */
+    }
+}
+
+
+

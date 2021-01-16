@@ -1,0 +1,125 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 16, 2020
+ *      Author: Ahmed Mohamed
+ */
+
+
+#include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
+
+#define time 50
+
+unsigned char sec = 0;
+unsigned char min = 0;
+unsigned char hours = 0;
+
+ISR(TIMER1_COMPA_vect){
+	sec++;
+	if(sec == 60){
+		sec = 0;
+		min++;
+	}
+	if(min == 60){
+		min = 0;
+		hours++;
+	}
+	if(hours == 24){
+		hours = 0;
+	}
+}
+
+ISR(INT0_vect){
+	sec = 0;
+	min = 0;
+	hours = 0;
+	TCNT1 = 0;
+	TCCR1B |= (1<<CS12);
+}
+
+ISR(INT1_vect){
+	TCCR1B &= ~(1<<CS12);
+}
+
+ISR(INT2_vect){
+	TCCR1B |= (1<<CS12);
+}
+
+void TIMER1_init(void){
+	TCCR1A = (1<<FOC1A) | (1<<FOC1B);
+	TCCR1B = (1<<WGM12) | (1<<CS12);
+	TCNT1 = 0;
+	OCR1A = 3907;
+	TIMSK = (1<<OCIE1A);
+	SREG = (1<<7);
+}
+
+void INT0_init(void){
+	DDRD &= ~(1<<PD2);
+	PORTD |= (1<<PD2);
+
+	MCUCR |= (1<<ISC01);
+	GICR |= (1<<INT0);
+}
+
+void INT1_init(void){
+	DDRD &= ~(1<<PD3);
+
+	MCUCR |= (1<<ISC11) | (1<<ISC10);
+	GICR |= (1<<INT1);
+
+}
+
+void INT2_init(void){
+	DDRB &= ~(1<<PB2);
+	PORTB |= (1<<PB2);
+
+	MCUCSR &= ~(1<<ISC2);
+	GICR |= (1<<INT2);
+}
+
+int main(void){
+	TIMER1_init();
+	INT0_init();
+	INT1_init();
+	INT2_init();
+
+	DDRA = 0x3F;	// Set PORTA as output (0 - 5)
+	PORTA = 0xFF;	// At first enable all 7segments
+
+	DDRC = 0x0F; 	// set first four pins in PORTC as outputs
+	PORTC = 0; 		// At first display 0
+
+	_delay_us(time);
+
+	while(1){
+
+		//DISPLAY
+
+		PORTA = 0x01; 		// enable 1st 7 segment
+		PORTC = sec%10;		// Display 1st digit of seconds
+		_delay_us(time);	// wait for 50 us
+
+		PORTA = (PORTA<<1); // enable 2nd 7 segment
+		PORTC =(sec)/10; 	// Display 2st digit of seconds
+		_delay_us(time); 	// wait for 50 us
+
+		PORTA = (PORTA<<1);// enable 3rd 7 segment
+		PORTC = min%10;		// Display 1st digit of minutes
+		_delay_us(time);	// wait for 50 us
+
+		PORTA = (PORTA<<1);	// enable 4th 7 segment
+		PORTC =(min)/10;	// Display 2st digit of minutes
+		_delay_us(time);	// wait for 50 us
+
+		PORTA = (PORTA<<1);	// enable 5th 7 segment
+		PORTC = hours%10;	// Display 1st digit of hours
+		_delay_us(time);	// wait for 50 us
+
+		PORTA = (PORTA<<1);	// enable 6th 7 segment
+		PORTC =(hours)/10;	// Display 2st digit of hours
+		_delay_us(time);	// wait for 50 us
+	}
+}

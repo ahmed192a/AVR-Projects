@@ -1,0 +1,415 @@
+21:49:15 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+./main.o: In function `__vector_2':
+../main.c:13: undefined reference to `INT0_init'
+make: *** [project_2.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:49:24 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+./main.o: In function `__vector_2':
+../main.c:13: undefined reference to `INT0_init'
+make: *** [project_2.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:49:36 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6152 bytes (37.5% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:49:39 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6152 bytes (37.5% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:51:07 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6152 bytes (37.5% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:54:35 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6174 bytes (37.7% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (2.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:54:37 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6174 bytes (37.7% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (2.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:00:46 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6910 bytes (42.2% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (2.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:03:04 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6152 bytes (37.5% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:03:21 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6152 bytes (37.5% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:21:29 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../ADC.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"ADC.d" -MT"ADC.o" -c -o "ADC.o" "../ADC.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../ADC.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ADC.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:168: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'main':
+../main.c:69: warning: implicit declaration of function 'SET_BIN'
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+./main.o: In function `__vector_2':
+../main.c:13: undefined reference to `SET_BIN'
+make: *** [project_2.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:22:12 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+./main.o: In function `__vector_2':
+../main.c:13: undefined reference to `SET_BIN'
+make: *** [project_2.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:22:15 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6234 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:23:06 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6234 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:30:30 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../micro_config.h:22,
+                 from ../ADC.h:14,
+                 from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega16 -o "project_2.elf"  ./ADC.o ./lcd.o ./main.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6234 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:30:34 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6234 bytes (38.0% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (2.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

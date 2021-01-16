@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.eclipse.cdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="org.eclipse.cdt.core.cSource.contenttype_context" deleted\="false" description\="" enabled\="true" name\="Default AVR source template">${filecomment}&\#13;\r\n${includes}&\#13;\r\n&\#13;\r\n${declarations}&\#13;\r\n&\#13;\r\n\#include &lt;avr/io.h&gt;&\#13;\r\n\#include &lt;util/delay.h&gt;&\#13;\r\n\#include &lt;avr/interrupt.h&gt;&\#13;\r\n&\#13;\r\nint main(void){&\#13;\r\n&\#13;\r\n\twhile(1){&\#13;\r\n&\#13;\r\n&\#13;\r\n\t}&\#13;\r\n}</template></templates>
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

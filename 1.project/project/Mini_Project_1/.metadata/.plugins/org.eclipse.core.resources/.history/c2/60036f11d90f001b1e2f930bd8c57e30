@@ -1,0 +1,92 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 16, 2020
+ *      Author: ah132
+ */
+
+
+
+#include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
+
+#define time 30
+
+unsigned char sec = 0;
+unsigned char min = 0;
+unsigned char hours = 0;
+
+ISR(TIMER1_COMPA_vect){
+	sec++;
+	if(sec == 60){
+		sec = 0;
+		min++;
+	}
+	if(min == 60){
+		min = 0;
+		hours++;
+	}
+	if(hours == 24){
+		hours = 0;
+	}
+}
+
+void TIMER1_init(void){
+	TCCR1A = (1<<FOC1A) | (1<<FOC1B);
+	TCCR1B = (1<<WGM12) | (1<<CS12);
+	TCNT1 = 0;
+	OCR1A = 3907;
+	TIMSK = (1<<OCIE1A);
+	SREG = (1<<7);
+}
+
+void display(unsigned char data){
+	PORTD = 0x80;
+	PORTC = data%10;
+	_delay_ms(50);
+	PORTD = 0x40;
+	PORTC =(data- (data%10) )/10;
+	_delay_ms(50);
+}
+
+int main(void){
+	TIMER1_init();
+	DDRD = 0xFF;
+	PORTD = 0xFF;
+
+	DDRC = 0x0F;
+	PORTC = 0;
+
+	_delay_ms(100);
+
+	while(1){
+
+		//DESPLAY
+		/*
+		display(sec);
+		display(min);
+		display(hours);
+		*/
+		PORTD = 0x80;
+		PORTC = sec%10;
+		_delay_ms(time);
+		PORTD = 0x40;
+		PORTC =(sec- (sec%10) )/10;
+		_delay_ms(time);
+
+		PORTD = 0x20;
+		PORTC = min%10;
+		_delay_ms(time);
+		PORTD = 0x10;
+		PORTC =(min- (min%10) )/10;
+		_delay_ms(time);
+
+		PORTD = 0x08;
+		PORTC = hours%10;
+		_delay_ms(time);
+		PORTD = 0x04;
+		PORTC =(hours- (hours%10) )/10;
+		_delay_ms(time);
+	}
+}
