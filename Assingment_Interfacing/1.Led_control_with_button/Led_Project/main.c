@@ -1,11 +1,25 @@
+/**
+ * @file main.c
+ * @author Ahmed Mohamed (ahmed.mohamed.eng.25@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-09-17 @ 18:09:37
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <avr/io.h>
 
 void DIO_init();
 
-
 /**
  * @brief main function
- * @return int
+ * 
+ * @return int 
+ * @version 0.1
+ * 
+ * @date 2022-09-17 @ 18:09:51
+ * @author Ahmed Mohamed
  */
 int main(){
 	DIO_init();

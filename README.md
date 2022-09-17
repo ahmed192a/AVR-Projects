@@ -1,1 +1,1 @@
-Read me
+### Embedded Diploma under supervision of [Prof. Dr. Thomas Wiegand](https://www.thomas-wiegand.de/) at [University of Applied Sciences Bielefeld](https://www.fh-bielefeld.de/)
