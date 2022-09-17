@@ -1,0 +1,95 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 24, 2021
+ *
+ *  Author: Ahmed Mohamed
+ */
+
+#include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
+#include "micro_config.h"
+#include "std_types.h"
+#include "timer.h"
+
+
+#define time 50
+
+unsigned char sec = 30;
+unsigned char min = 0;
+unsigned char hours = 0;
+unsigned char dir = 0;
+// configure the timing variables
+void timer1_ISR(){
+	sec--;
+
+	if(sec== 9){
+		if(dir){
+			PORTB = 0x12;
+		}
+		else{
+			PORTA = 0x12;
+		}
+
+	}
+	else if(sec == 0){
+		sec = 30;
+		if(dir){
+			PORTB = 0x0C;
+			PORTA = 0x21;
+
+			dir = 0;
+		}
+		else{
+			PORTA = 0x0C;
+			PORTB = 0x21;
+			dir = 1;
+		}
+
+
+	}
+
+}
+
+int main(){
+	SREG = (1<<7);		// enable I-bit
+
+	Timer_ConfigType timer1;
+	timer1.clock = F_CPU_256;
+	timer1.mode = CTC_MODE_CHANNEL_A;;
+	timer1.initial = 0;
+	timer1.compare_value = 3907;
+	timer1.compare_output = NORMAL;
+	timer1.OutputPin = NONE;
+
+
+	TIMER1_init(&timer1);
+	Timer1_setCallBack(timer1_ISR);
+
+	DDRD = 0x03;	// Set PORTA as output (0 - 5)
+	PORTD = 0x03;	// At first enable all 7segments
+
+	DDRC = 0x0F; 	// set first four pins in PORTC as outputs
+	PORTC = 0; 		// At first display 0
+
+	DDRA = 0x3F;
+	PORTA = 0x21;
+
+	DDRB = 0x3F;
+	PORTB = 0x0C;
+
+
+	while(1){
+		PORTD = 0x01; 		// enable 1st 7 segment
+		PORTC = sec%10;		// Display 1st digit of seconds
+		_delay_us(time);	// wait for 50 us
+
+		PORTD = (PORTD<<1); // enable 2nd 7 segment
+		PORTC =(sec)/10; 	// Display 2st digit of seconds
+		_delay_us(time); 	// wait for 50 us
+
+
+
+	}
+}

@@ -1,0 +1,390 @@
+16:08:33 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'main':
+../main.c:51: error: incompatible type for argument 1 of 'TIMER1_init'
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:08:37 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+In file included from ../micro_config.h:23,
+                 from ../timer.h:17,
+                 from ../timer.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../timer.c: In function 'Timer0_setCallBack':
+../timer.c:237: warning: function return types not compatible due to 'volatile'
+../timer.c: In function 'Timer1_setCallBack':
+../timer.c:242: warning: function return types not compatible due to 'volatile'
+../timer.c: In function 'Timer2_setCallBack':
+../timer.c:247: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+./timer.o: In function `Timer2_setCallBack':
+../timer.c:245: multiple definition of `__vector_6'
+./main.o:../main.c:24: first defined here
+make: *** [traffic.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:09:02 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+./timer.o: In function `Timer2_setCallBack':
+../timer.c:245: multiple definition of `__vector_6'
+./main.o:../main.c:24: first defined here
+make: *** [traffic.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:09:28 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+./timer.o: In function `Timer2_setCallBack':
+../timer.c:245: multiple definition of `__vector_6'
+./main.o:../main.c:24: first defined here
+make: *** [traffic.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:09:32 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+In file included from ../micro_config.h:23,
+                 from ../timer.h:17,
+                 from ../timer.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../timer.c: In function 'Timer0_setCallBack':
+../timer.c:237: warning: function return types not compatible due to 'volatile'
+../timer.c: In function 'Timer1_setCallBack':
+../timer.c:242: warning: function return types not compatible due to 'volatile'
+../timer.c: In function 'Timer2_setCallBack':
+../timer.c:247: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+./timer.o: In function `Timer2_setCallBack':
+../timer.c:245: multiple definition of `__vector_6'
+./main.o:../main.c:24: first defined here
+make: *** [traffic.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:09:34 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+./timer.o: In function `Timer2_setCallBack':
+../timer.c:245: multiple definition of `__vector_6'
+./main.o:../main.c:24: first defined here
+make: *** [traffic.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:11:31 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+../main.c: In function 'main':
+../main.c:52: error: 'timer1_ISR' undeclared (first use in this function)
+../main.c:52: error: (Each undeclared identifier is reported only once
+../main.c:52: error: for each function it appears in.)
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:11:34 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+../main.c: In function 'main':
+../main.c:52: error: 'timer1_ISR' undeclared (first use in this function)
+../main.c:52: error: (Each undeclared identifier is reported only once
+../main.c:52: error: for each function it appears in.)
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:11:45 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2092 bytes (12.8% Full)
+(.text + .data + .bootloader)
+
+Data:          9 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:55 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6160 bytes (37.6% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:17:34 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6160 bytes (37.6% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:20:22 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6160 bytes (37.6% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:28:12 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6188 bytes (37.8% Full)
+(.text + .data + .bootloader)
+
+Data:         19 bytes (1.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:30:28 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6198 bytes (37.8% Full)
+(.text + .data + .bootloader)
+
+Data:         19 bytes (1.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:31:46 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6208 bytes (37.9% Full)
+(.text + .data + .bootloader)
+
+Data:         19 bytes (1.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:33:04 **** Incremental Build of configuration Debug for project traffic ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: traffic.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic.map -mmcu=atmega16 -o "traffic.elf"  ./main.o ./timer.o   
+Finished building target: traffic.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S traffic.elf  >"traffic.lss"
+Finished building: traffic.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 traffic.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6208 bytes (37.9% Full)
+(.text + .data + .bootloader)
+
+Data:         19 bytes (1.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

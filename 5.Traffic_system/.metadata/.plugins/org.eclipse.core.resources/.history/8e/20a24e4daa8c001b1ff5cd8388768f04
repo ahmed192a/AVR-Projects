@@ -1,0 +1,47 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 24, 2021
+ *
+ *  Author: Ahmed Mohamed
+ */
+
+#include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
+#include "micro_config.h"
+#include "std_types.h"
+#include "timer.h"
+
+
+#define time 50
+
+unsigned char sec = 0;
+unsigned char min = 0;
+unsigned char hours = 0;
+
+// configure the timing variables
+ISR(TIMER1_COMPA_vect){
+	sec++;
+	if(sec == 60){
+		sec = 0;
+		min++;
+	}
+	if(min == 60){
+		min = 0;
+		hours++;
+	}
+	if(hours == 24){
+		hours = 0;
+	}
+}
+
+int main(){
+
+
+	while(1){
+
+
+
+	}
+}
