@@ -1,1 +1,1 @@
-### Embedded Diploma under supervision of [Prof. Dr. Thomas Wiegand](https://www.thomas-wiegand.de/) at [University of Applied Sciences Bielefeld](https://www.fh-bielefeld.de/)
+### Embedded Diploma under supervision of [Eng. Mohamed Tarek](https://www.linkedin.com/in/mohamed-tarek-2237a457/)
