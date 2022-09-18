@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Exercise2/LCD_Modes_Amit.c&apos; to &apos;Exercise2.c&apos;" description="Rename resource &apos;LCD_Modes_Amit.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LCD_Modes_Amit.c" name="Exercise2.c" stamp="1441293527369" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Exercise2/Exercise7.c&apos; to &apos;Exercise2.c&apos;" description="Rename resource &apos;Exercise7.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Exercise7.c" name="Exercise2.c" stamp="1441293701468" updateReferences="true"/>
+</session>

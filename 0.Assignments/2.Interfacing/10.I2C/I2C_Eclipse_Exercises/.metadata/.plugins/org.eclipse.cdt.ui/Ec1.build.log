@@ -1,0 +1,11 @@
+15:12:30 **** Rebuild of configuration Debug for project Ec1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Ec1.o" "..\\src\\Ec1.c" 
+..\src\Ec1.c: In function 'main':
+..\src\Ec1.c:16:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long unsigned int' [-Wformat=]
+  printf("%d",sizeof(Array[1]));
+         ^
+gcc -o Ec1.exe "src\\Ec1.o" 
+
+15:12:30 Build Finished (took 309ms)
+

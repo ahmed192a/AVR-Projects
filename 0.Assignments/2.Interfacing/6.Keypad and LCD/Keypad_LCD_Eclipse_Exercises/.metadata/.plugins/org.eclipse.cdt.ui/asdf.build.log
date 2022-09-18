@@ -1,0 +1,7 @@
+15:08:26 **** Incremental Build of configuration Debug for project asdf ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\asdf.o" "..\\src\\asdf.c" 
+gcc -o asdf.exe "src\\asdf.o" 
+
+15:08:27 Build Finished (took 1s.60ms)
+

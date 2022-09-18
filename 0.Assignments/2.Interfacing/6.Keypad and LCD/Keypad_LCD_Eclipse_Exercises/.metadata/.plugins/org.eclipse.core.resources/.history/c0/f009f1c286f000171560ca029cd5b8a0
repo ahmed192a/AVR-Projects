@@ -1,0 +1,44 @@
+/*
+ ============================================================================
+ Name        : ex9.c
+ Author      : Mohamed Tarek
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int au8OutputArray[256];
+
+int u8CountOnes(unsigned int u32InputNumber)
+{
+	unsigned int mask=0x80000000;
+	unsigned int i,ones_count=0;
+	for(i=0;i<32;i++)
+	{
+		if((u32InputNumber<<i) & mask)
+		{
+			++ones_count
+		}
+	}
+	return
+}
+
+int main(void) {
+	int count;
+    int n1 = 5,n2=10;
+    int *ptr;
+	int arr_size_used = 0;
+	ptr = vidPrintReverseInclusive(n1,n2,&arr_size_used);
+
+	printf("Output Array = ");
+	for(count=0;count<arr_size_used;count++)
+	{
+		printf("%d,",ptr[count]);
+	}
+	printf("\nOutput Array Size = %d",arr_size_used);
+	return 0;
+}

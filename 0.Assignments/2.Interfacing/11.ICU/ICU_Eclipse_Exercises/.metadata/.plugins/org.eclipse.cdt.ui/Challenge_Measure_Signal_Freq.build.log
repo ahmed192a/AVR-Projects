@@ -1,0 +1,60 @@
+01:18:24 **** Build of configuration Debug for project Challenge_Measure_Signal_Freq ****
+make all 
+Building file: ../icu.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"icu.d" -MT"icu.d" -c -o "icu.o" "../icu.c"
+In file included from ../micro_config.h:22,
+                 from ../icu.h:18,
+                 from ../icu.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../icu.c: In function 'Icu_setCallBack':
+../icu.c:79: warning: function return types not compatible due to 'volatile'
+Finished building: ../icu.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../measure_freq.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"measure_freq.d" -MT"measure_freq.d" -c -o "measure_freq.o" "../measure_freq.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../measure_freq.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../measure_freq.c
+ 
+Building target: Challenge_Measure_Signal_Freq.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_Measure_Signal_Freq.map -mmcu=atmega16 -o "Challenge_Measure_Signal_Freq.elf"  ./icu.o ./lcd.o ./measure_freq.o   
+Finished building target: Challenge_Measure_Signal_Freq.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_Measure_Signal_Freq.elf  >"Challenge_Measure_Signal_Freq.lss"
+Finished building: Challenge_Measure_Signal_Freq.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_Measure_Signal_Freq.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6460 bytes (39.4% Full)
+(.text + .data + .bootloader)
+
+Data:         29 bytes (2.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:18:24 Build Finished (took 702ms)
+

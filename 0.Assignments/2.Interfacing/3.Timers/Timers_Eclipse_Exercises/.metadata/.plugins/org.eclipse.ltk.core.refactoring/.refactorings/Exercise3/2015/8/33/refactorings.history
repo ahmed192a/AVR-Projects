@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Exercise3/Exercise3_CTC_Square_Wave.c&apos; to &apos;Exercise3.c&apos;" description="Rename resource &apos;Exercise3_CTC_Square_Wave.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Exercise3_CTC_Square_Wave.c" name="Exercise3.c" stamp="1439635757171" updateReferences="true"/>
+</session>

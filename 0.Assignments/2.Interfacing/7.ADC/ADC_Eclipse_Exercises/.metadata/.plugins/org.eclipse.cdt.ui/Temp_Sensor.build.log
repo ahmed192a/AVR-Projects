@@ -1,0 +1,58 @@
+11:14:57 **** Incremental Build of configuration Debug for project Temp_Sensor ****
+make all 
+Building file: ../adc.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.c"
+In file included from ../micro_config.h:19,
+                 from ../adc.h:11,
+                 from ../adc.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../adc.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:19,
+                 from ../lcd.h:13,
+                 from ../lcd.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:160: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../temp_sensor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"temp_sensor.d" -MT"temp_sensor.d" -c -o "temp_sensor.o" "../temp_sensor.c"
+In file included from ../micro_config.h:19,
+                 from ../adc.h:11,
+                 from ../temp_sensor.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../temp_sensor.c
+ 
+Building target: Temp_Sensor.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Temp_Sensor.map -mmcu=atmega16 -o "Temp_Sensor.elf"  ./adc.o ./lcd.o ./temp_sensor.o   
+Finished building target: Temp_Sensor.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Temp_Sensor.elf  >"Temp_Sensor.lss"
+Finished building: Temp_Sensor.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Temp_Sensor.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6942 bytes (42.4% Full)
+(.text + .data + .bootloader)
+
+Data:        272 bytes (26.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+11:14:58 Build Finished (took 898ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Challenge_Measure_Signal_Freq/measure_period.c&apos; to &apos;measure_freq.c&apos;" description="Rename resource &apos;measure_period.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="measure_period.c" name="measure_freq.c" stamp="1515786006125" updateReferences="true"/>
+</session>

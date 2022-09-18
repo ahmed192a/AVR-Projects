@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Exercise1/UART.c&apos; to &apos;uart.c&apos;" description="Rename resource &apos;UART.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="UART.c" name="uart.c" stamp="1441925960433" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Exercise1/UART.h&apos; to &apos;uart.h&apos;" description="Rename resource &apos;UART.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="UART.h" name="uart.h" stamp="1441925969102" updateReferences="true"/>
+</session>

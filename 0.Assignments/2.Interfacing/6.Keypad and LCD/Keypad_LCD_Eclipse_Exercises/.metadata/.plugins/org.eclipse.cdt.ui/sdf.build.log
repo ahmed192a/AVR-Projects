@@ -1,0 +1,10 @@
+16:03:19 **** Incremental Build of configuration Debug for project sdf ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\sdf.o" "..\\src\\sdf.c" 
+..\src\sdf.c: In function 'main':
+..\src\sdf.c:18:2: error: invalid preprocessing directive #elseif
+ #elseif(Data ==6)
+  ^
+
+16:03:20 Build Finished (took 727ms)
+

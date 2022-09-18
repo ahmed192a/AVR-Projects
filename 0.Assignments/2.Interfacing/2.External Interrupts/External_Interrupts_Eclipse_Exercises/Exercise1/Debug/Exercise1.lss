@@ -1,0 +1,184 @@
+
+Exercise1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000136  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         0000039c  00000000  00000000  0000018c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      000006ab  00000000  00000000  00000528  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 36 00 	jmp	0x6c	; 0x6c <__vector_1>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 84 00 	call	0x108	; 0x108 <main>
+  64:	0c 94 99 00 	jmp	0x132	; 0x132 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <__vector_1>:
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+/* External INT0 Interrupt Service Routine */
+ISR(INT0_vect)
+{
+  6c:	1f 92       	push	r1
+  6e:	0f 92       	push	r0
+  70:	0f b6       	in	r0, 0x3f	; 63
+  72:	0f 92       	push	r0
+  74:	11 24       	eor	r1, r1
+  76:	8f 93       	push	r24
+  78:	9f 93       	push	r25
+  7a:	af 93       	push	r26
+  7c:	bf 93       	push	r27
+  7e:	ef 93       	push	r30
+  80:	ff 93       	push	r31
+  82:	df 93       	push	r29
+  84:	cf 93       	push	r28
+  86:	cd b7       	in	r28, 0x3d	; 61
+  88:	de b7       	in	r29, 0x3e	; 62
+	PORTC = PORTC ^ (1<<PC0); //Toggle value of PIN 0 in PORTC (Led Toggle)
+  8a:	a5 e3       	ldi	r26, 0x35	; 53
+  8c:	b0 e0       	ldi	r27, 0x00	; 0
+  8e:	e5 e3       	ldi	r30, 0x35	; 53
+  90:	f0 e0       	ldi	r31, 0x00	; 0
+  92:	90 81       	ld	r25, Z
+  94:	81 e0       	ldi	r24, 0x01	; 1
+  96:	89 27       	eor	r24, r25
+  98:	8c 93       	st	X, r24
+}
+  9a:	cf 91       	pop	r28
+  9c:	df 91       	pop	r29
+  9e:	ff 91       	pop	r31
+  a0:	ef 91       	pop	r30
+  a2:	bf 91       	pop	r27
+  a4:	af 91       	pop	r26
+  a6:	9f 91       	pop	r25
+  a8:	8f 91       	pop	r24
+  aa:	0f 90       	pop	r0
+  ac:	0f be       	out	0x3f, r0	; 63
+  ae:	0f 90       	pop	r0
+  b0:	1f 90       	pop	r1
+  b2:	18 95       	reti
+
+000000b4 <INT0_Init>:
+
+/* External INT0 enable and configuration function */
+void INT0_Init(void)
+{
+  b4:	df 93       	push	r29
+  b6:	cf 93       	push	r28
+  b8:	cd b7       	in	r28, 0x3d	; 61
+  ba:	de b7       	in	r29, 0x3e	; 62
+	SREG  &= ~(1<<7);                   // Disable interrupts by clearing I-bit
+  bc:	af e5       	ldi	r26, 0x5F	; 95
+  be:	b0 e0       	ldi	r27, 0x00	; 0
+  c0:	ef e5       	ldi	r30, 0x5F	; 95
+  c2:	f0 e0       	ldi	r31, 0x00	; 0
+  c4:	80 81       	ld	r24, Z
+  c6:	8f 77       	andi	r24, 0x7F	; 127
+  c8:	8c 93       	st	X, r24
+	DDRD  &= (~(1<<PD2));               // Configure INT0/PD2 as input pin
+  ca:	a1 e3       	ldi	r26, 0x31	; 49
+  cc:	b0 e0       	ldi	r27, 0x00	; 0
+  ce:	e1 e3       	ldi	r30, 0x31	; 49
+  d0:	f0 e0       	ldi	r31, 0x00	; 0
+  d2:	80 81       	ld	r24, Z
+  d4:	8b 7f       	andi	r24, 0xFB	; 251
+  d6:	8c 93       	st	X, r24
+	GICR  |= (1<<INT0);                 // Enable external interrupt pin INT0
+  d8:	ab e5       	ldi	r26, 0x5B	; 91
+  da:	b0 e0       	ldi	r27, 0x00	; 0
+  dc:	eb e5       	ldi	r30, 0x5B	; 91
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	80 81       	ld	r24, Z
+  e2:	80 64       	ori	r24, 0x40	; 64
+  e4:	8c 93       	st	X, r24
+	MCUCR |= (1<<ISC00) | (1<<ISC01);   // Trigger INT0 with the raising edge
+  e6:	a5 e5       	ldi	r26, 0x55	; 85
+  e8:	b0 e0       	ldi	r27, 0x00	; 0
+  ea:	e5 e5       	ldi	r30, 0x55	; 85
+  ec:	f0 e0       	ldi	r31, 0x00	; 0
+  ee:	80 81       	ld	r24, Z
+  f0:	83 60       	ori	r24, 0x03	; 3
+  f2:	8c 93       	st	X, r24
+	SREG  |= (1<<7);                    // Enable interrupts by setting I-bit
+  f4:	af e5       	ldi	r26, 0x5F	; 95
+  f6:	b0 e0       	ldi	r27, 0x00	; 0
+  f8:	ef e5       	ldi	r30, 0x5F	; 95
+  fa:	f0 e0       	ldi	r31, 0x00	; 0
+  fc:	80 81       	ld	r24, Z
+  fe:	80 68       	ori	r24, 0x80	; 128
+ 100:	8c 93       	st	X, r24
+}
+ 102:	cf 91       	pop	r28
+ 104:	df 91       	pop	r29
+ 106:	08 95       	ret
+
+00000108 <main>:
+
+int main(void)
+{
+ 108:	df 93       	push	r29
+ 10a:	cf 93       	push	r28
+ 10c:	cd b7       	in	r28, 0x3d	; 61
+ 10e:	de b7       	in	r29, 0x3e	; 62
+	INT0_Init();              // Enable external INT0
+ 110:	0e 94 5a 00 	call	0xb4	; 0xb4 <INT0_Init>
+
+	DDRC  = DDRC | (1<<PC0);  // Configure pin PC0 in PORTC as output pin
+ 114:	a4 e3       	ldi	r26, 0x34	; 52
+ 116:	b0 e0       	ldi	r27, 0x00	; 0
+ 118:	e4 e3       	ldi	r30, 0x34	; 52
+ 11a:	f0 e0       	ldi	r31, 0x00	; 0
+ 11c:	80 81       	ld	r24, Z
+ 11e:	81 60       	ori	r24, 0x01	; 1
+ 120:	8c 93       	st	X, r24
+	PORTC = PORTC | (1<<PC0); // Set Value of PIN 0 in PORTC to 1 at the beginning (LED OFF)
+ 122:	a5 e3       	ldi	r26, 0x35	; 53
+ 124:	b0 e0       	ldi	r27, 0x00	; 0
+ 126:	e5 e3       	ldi	r30, 0x35	; 53
+ 128:	f0 e0       	ldi	r31, 0x00	; 0
+ 12a:	80 81       	ld	r24, Z
+ 12c:	81 60       	ori	r24, 0x01	; 1
+ 12e:	8c 93       	st	X, r24
+ 130:	ff cf       	rjmp	.-2      	; 0x130 <main+0x28>
+
+00000132 <_exit>:
+ 132:	f8 94       	cli
+
+00000134 <__stop_program>:
+ 134:	ff cf       	rjmp	.-2      	; 0x134 <__stop_program>

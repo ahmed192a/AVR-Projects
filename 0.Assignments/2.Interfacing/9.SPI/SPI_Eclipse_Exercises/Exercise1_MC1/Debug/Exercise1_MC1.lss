@@ -1,0 +1,415 @@
+
+Exercise1_MC1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000264  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         0000078c  00000000  00000000  000002b8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      0000085b  00000000  00000000  00000a44  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 30 01 	jmp	0x260	; 0x260 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <main>:
+
+#define SWITCH_PRESSED 1
+#define SWITCH_NOT_PRESSED 0
+
+int main(void)
+{
+  6c:	df 93       	push	r29
+  6e:	cf 93       	push	r28
+  70:	cd b7       	in	r28, 0x3d	; 61
+  72:	de b7       	in	r29, 0x3e	; 62
+	SPI_initMaster();
+  74:	0e 94 54 00 	call	0xa8	; 0xa8 <SPI_initMaster>
+	CLEAR_BIT(DDRA,PA0); //configure PA0 as input pin
+  78:	aa e3       	ldi	r26, 0x3A	; 58
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	ea e3       	ldi	r30, 0x3A	; 58
+  7e:	f0 e0       	ldi	r31, 0x00	; 0
+  80:	80 81       	ld	r24, Z
+  82:	8e 7f       	andi	r24, 0xFE	; 254
+  84:	8c 93       	st	X, r24
+    while(1)
+    {
+		if(BIT_IS_SET(PINA,PA0)) //if switch is pressed
+  86:	e9 e3       	ldi	r30, 0x39	; 57
+  88:	f0 e0       	ldi	r31, 0x00	; 0
+  8a:	80 81       	ld	r24, Z
+  8c:	88 2f       	mov	r24, r24
+  8e:	90 e0       	ldi	r25, 0x00	; 0
+  90:	81 70       	andi	r24, 0x01	; 1
+  92:	90 70       	andi	r25, 0x00	; 0
+  94:	88 23       	and	r24, r24
+  96:	21 f0       	breq	.+8      	; 0xa0 <main+0x34>
+		{
+			SPI_sendByte(SWITCH_PRESSED);
+  98:	81 e0       	ldi	r24, 0x01	; 1
+  9a:	0e 94 a2 00 	call	0x144	; 0x144 <SPI_sendByte>
+  9e:	f3 cf       	rjmp	.-26     	; 0x86 <main+0x1a>
+		}
+		else
+		{
+			SPI_sendByte(SWITCH_NOT_PRESSED);
+  a0:	80 e0       	ldi	r24, 0x00	; 0
+  a2:	0e 94 a2 00 	call	0x144	; 0x144 <SPI_sendByte>
+  a6:	ef cf       	rjmp	.-34     	; 0x86 <main+0x1a>
+
+000000a8 <SPI_initMaster>:
+
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+void SPI_initMaster(void) 
+{
+  a8:	df 93       	push	r29
+  aa:	cf 93       	push	r28
+  ac:	cd b7       	in	r28, 0x3d	; 61
+  ae:	de b7       	in	r29, 0x3e	; 62
+	 * SS(PB4)   --> Output
+	 * MOSI(PB5) --> Output 
+	 * MISO(PB6) --> Input
+	 * SCK(PB7) --> Output
+	 ********************************************/
+	DDRB = DDRB | (1<<PB4);
+  b0:	a7 e3       	ldi	r26, 0x37	; 55
+  b2:	b0 e0       	ldi	r27, 0x00	; 0
+  b4:	e7 e3       	ldi	r30, 0x37	; 55
+  b6:	f0 e0       	ldi	r31, 0x00	; 0
+  b8:	80 81       	ld	r24, Z
+  ba:	80 61       	ori	r24, 0x10	; 16
+  bc:	8c 93       	st	X, r24
+	DDRB = DDRB | (1<<PB5);
+  be:	a7 e3       	ldi	r26, 0x37	; 55
+  c0:	b0 e0       	ldi	r27, 0x00	; 0
+  c2:	e7 e3       	ldi	r30, 0x37	; 55
+  c4:	f0 e0       	ldi	r31, 0x00	; 0
+  c6:	80 81       	ld	r24, Z
+  c8:	80 62       	ori	r24, 0x20	; 32
+  ca:	8c 93       	st	X, r24
+	DDRB = DDRB & ~(1<<PB6);
+  cc:	a7 e3       	ldi	r26, 0x37	; 55
+  ce:	b0 e0       	ldi	r27, 0x00	; 0
+  d0:	e7 e3       	ldi	r30, 0x37	; 55
+  d2:	f0 e0       	ldi	r31, 0x00	; 0
+  d4:	80 81       	ld	r24, Z
+  d6:	8f 7b       	andi	r24, 0xBF	; 191
+  d8:	8c 93       	st	X, r24
+	DDRB = DDRB | (1<<PB7);
+  da:	a7 e3       	ldi	r26, 0x37	; 55
+  dc:	b0 e0       	ldi	r27, 0x00	; 0
+  de:	e7 e3       	ldi	r30, 0x37	; 55
+  e0:	f0 e0       	ldi	r31, 0x00	; 0
+  e2:	80 81       	ld	r24, Z
+  e4:	80 68       	ori	r24, 0x80	; 128
+  e6:	8c 93       	st	X, r24
+	
+	SPCR = (1<<SPE) | (1<<MSTR); // enable SPI + enable Master + choose SPI clock = Fosc/4
+  e8:	ed e2       	ldi	r30, 0x2D	; 45
+  ea:	f0 e0       	ldi	r31, 0x00	; 0
+  ec:	80 e5       	ldi	r24, 0x50	; 80
+  ee:	80 83       	st	Z, r24
+}
+  f0:	cf 91       	pop	r28
+  f2:	df 91       	pop	r29
+  f4:	08 95       	ret
+
+000000f6 <SPI_initSlave>:
+
+void SPI_initSlave(void)
+{ 
+  f6:	df 93       	push	r29
+  f8:	cf 93       	push	r28
+  fa:	cd b7       	in	r28, 0x3d	; 61
+  fc:	de b7       	in	r29, 0x3e	; 62
+	 * SS(PB4)   --> Input
+	 * MOSI(PB5) --> Input
+	 * MISO(PB6) --> Output
+	 * SCK(PB7) --> Input
+	 ********************************************/
+	DDRB = DDRB & (~(1<<PB4));  
+  fe:	a7 e3       	ldi	r26, 0x37	; 55
+ 100:	b0 e0       	ldi	r27, 0x00	; 0
+ 102:	e7 e3       	ldi	r30, 0x37	; 55
+ 104:	f0 e0       	ldi	r31, 0x00	; 0
+ 106:	80 81       	ld	r24, Z
+ 108:	8f 7e       	andi	r24, 0xEF	; 239
+ 10a:	8c 93       	st	X, r24
+	DDRB = DDRB & (~(1<<PB5));
+ 10c:	a7 e3       	ldi	r26, 0x37	; 55
+ 10e:	b0 e0       	ldi	r27, 0x00	; 0
+ 110:	e7 e3       	ldi	r30, 0x37	; 55
+ 112:	f0 e0       	ldi	r31, 0x00	; 0
+ 114:	80 81       	ld	r24, Z
+ 116:	8f 7d       	andi	r24, 0xDF	; 223
+ 118:	8c 93       	st	X, r24
+	DDRB = DDRB | (1<<PB6);
+ 11a:	a7 e3       	ldi	r26, 0x37	; 55
+ 11c:	b0 e0       	ldi	r27, 0x00	; 0
+ 11e:	e7 e3       	ldi	r30, 0x37	; 55
+ 120:	f0 e0       	ldi	r31, 0x00	; 0
+ 122:	80 81       	ld	r24, Z
+ 124:	80 64       	ori	r24, 0x40	; 64
+ 126:	8c 93       	st	X, r24
+	DDRB = DDRB & (~(1<<PB7));
+ 128:	a7 e3       	ldi	r26, 0x37	; 55
+ 12a:	b0 e0       	ldi	r27, 0x00	; 0
+ 12c:	e7 e3       	ldi	r30, 0x37	; 55
+ 12e:	f0 e0       	ldi	r31, 0x00	; 0
+ 130:	80 81       	ld	r24, Z
+ 132:	8f 77       	andi	r24, 0x7F	; 127
+ 134:	8c 93       	st	X, r24
+
+	SPCR = (1<<SPE); // just enable SPI + choose SPI clock = Fosc/4
+ 136:	ed e2       	ldi	r30, 0x2D	; 45
+ 138:	f0 e0       	ldi	r31, 0x00	; 0
+ 13a:	80 e4       	ldi	r24, 0x40	; 64
+ 13c:	80 83       	st	Z, r24
+}
+ 13e:	cf 91       	pop	r28
+ 140:	df 91       	pop	r29
+ 142:	08 95       	ret
+
+00000144 <SPI_sendByte>:
+
+void SPI_sendByte(const uint8 data) 
+{
+ 144:	df 93       	push	r29
+ 146:	cf 93       	push	r28
+ 148:	0f 92       	push	r0
+ 14a:	cd b7       	in	r28, 0x3d	; 61
+ 14c:	de b7       	in	r29, 0x3e	; 62
+ 14e:	89 83       	std	Y+1, r24	; 0x01
+	SPDR = data; //send data by SPI
+ 150:	ef e2       	ldi	r30, 0x2F	; 47
+ 152:	f0 e0       	ldi	r31, 0x00	; 0
+ 154:	89 81       	ldd	r24, Y+1	; 0x01
+ 156:	80 83       	st	Z, r24
+	while(BIT_IS_CLEAR(SPSR,SPIF)){} //wait until SPI interrupt flag=1 (data is sent correctly)
+ 158:	ee e2       	ldi	r30, 0x2E	; 46
+ 15a:	f0 e0       	ldi	r31, 0x00	; 0
+ 15c:	80 81       	ld	r24, Z
+ 15e:	88 23       	and	r24, r24
+ 160:	dc f7       	brge	.-10     	; 0x158 <SPI_sendByte+0x14>
+}
+ 162:	0f 90       	pop	r0
+ 164:	cf 91       	pop	r28
+ 166:	df 91       	pop	r29
+ 168:	08 95       	ret
+
+0000016a <SPI_recieveByte>:
+
+uint8 SPI_recieveByte(void)
+{
+ 16a:	df 93       	push	r29
+ 16c:	cf 93       	push	r28
+ 16e:	cd b7       	in	r28, 0x3d	; 61
+ 170:	de b7       	in	r29, 0x3e	; 62
+   while(BIT_IS_CLEAR(SPSR,SPIF)){} //wait until SPI interrupt flag=1(data is receive correctly)
+ 172:	ee e2       	ldi	r30, 0x2E	; 46
+ 174:	f0 e0       	ldi	r31, 0x00	; 0
+ 176:	80 81       	ld	r24, Z
+ 178:	88 23       	and	r24, r24
+ 17a:	dc f7       	brge	.-10     	; 0x172 <SPI_recieveByte+0x8>
+   return SPDR; //return the received byte from SPI data register
+ 17c:	ef e2       	ldi	r30, 0x2F	; 47
+ 17e:	f0 e0       	ldi	r31, 0x00	; 0
+ 180:	80 81       	ld	r24, Z
+}
+ 182:	cf 91       	pop	r28
+ 184:	df 91       	pop	r29
+ 186:	08 95       	ret
+
+00000188 <SPI_SendString>:
+
+void SPI_SendString(const uint8 *Str)
+{
+ 188:	df 93       	push	r29
+ 18a:	cf 93       	push	r28
+ 18c:	00 d0       	rcall	.+0      	; 0x18e <SPI_SendString+0x6>
+ 18e:	0f 92       	push	r0
+ 190:	cd b7       	in	r28, 0x3d	; 61
+ 192:	de b7       	in	r29, 0x3e	; 62
+ 194:	9b 83       	std	Y+3, r25	; 0x03
+ 196:	8a 83       	std	Y+2, r24	; 0x02
+	uint8 i = 0;
+ 198:	19 82       	std	Y+1, r1	; 0x01
+ 19a:	0e c0       	rjmp	.+28     	; 0x1b8 <SPI_SendString+0x30>
+	while(Str[i] != '\0')
+	{
+		SPI_sendByte(Str[i]);
+ 19c:	89 81       	ldd	r24, Y+1	; 0x01
+ 19e:	28 2f       	mov	r18, r24
+ 1a0:	30 e0       	ldi	r19, 0x00	; 0
+ 1a2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1a4:	9b 81       	ldd	r25, Y+3	; 0x03
+ 1a6:	fc 01       	movw	r30, r24
+ 1a8:	e2 0f       	add	r30, r18
+ 1aa:	f3 1f       	adc	r31, r19
+ 1ac:	80 81       	ld	r24, Z
+ 1ae:	0e 94 a2 00 	call	0x144	; 0x144 <SPI_sendByte>
+		i++;
+ 1b2:	89 81       	ldd	r24, Y+1	; 0x01
+ 1b4:	8f 5f       	subi	r24, 0xFF	; 255
+ 1b6:	89 83       	std	Y+1, r24	; 0x01
+}
+
+void SPI_SendString(const uint8 *Str)
+{
+	uint8 i = 0;
+	while(Str[i] != '\0')
+ 1b8:	89 81       	ldd	r24, Y+1	; 0x01
+ 1ba:	28 2f       	mov	r18, r24
+ 1bc:	30 e0       	ldi	r19, 0x00	; 0
+ 1be:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1c0:	9b 81       	ldd	r25, Y+3	; 0x03
+ 1c2:	fc 01       	movw	r30, r24
+ 1c4:	e2 0f       	add	r30, r18
+ 1c6:	f3 1f       	adc	r31, r19
+ 1c8:	80 81       	ld	r24, Z
+ 1ca:	88 23       	and	r24, r24
+ 1cc:	39 f7       	brne	.-50     	; 0x19c <SPI_SendString+0x14>
+	{
+		SPI_sendByte(Str[i]);
+		i++;
+	}
+}
+ 1ce:	0f 90       	pop	r0
+ 1d0:	0f 90       	pop	r0
+ 1d2:	0f 90       	pop	r0
+ 1d4:	cf 91       	pop	r28
+ 1d6:	df 91       	pop	r29
+ 1d8:	08 95       	ret
+
+000001da <SPI_ReceiveString>:
+
+void SPI_ReceiveString(char *Str)
+{
+ 1da:	0f 93       	push	r16
+ 1dc:	1f 93       	push	r17
+ 1de:	df 93       	push	r29
+ 1e0:	cf 93       	push	r28
+ 1e2:	00 d0       	rcall	.+0      	; 0x1e4 <SPI_ReceiveString+0xa>
+ 1e4:	0f 92       	push	r0
+ 1e6:	cd b7       	in	r28, 0x3d	; 61
+ 1e8:	de b7       	in	r29, 0x3e	; 62
+ 1ea:	9b 83       	std	Y+3, r25	; 0x03
+ 1ec:	8a 83       	std	Y+2, r24	; 0x02
+	unsigned char i = 0;
+ 1ee:	19 82       	std	Y+1, r1	; 0x01
+	Str[i] = SPI_recieveByte();
+ 1f0:	89 81       	ldd	r24, Y+1	; 0x01
+ 1f2:	28 2f       	mov	r18, r24
+ 1f4:	30 e0       	ldi	r19, 0x00	; 0
+ 1f6:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1f8:	9b 81       	ldd	r25, Y+3	; 0x03
+ 1fa:	8c 01       	movw	r16, r24
+ 1fc:	02 0f       	add	r16, r18
+ 1fe:	13 1f       	adc	r17, r19
+ 200:	0e 94 b5 00 	call	0x16a	; 0x16a <SPI_recieveByte>
+ 204:	f8 01       	movw	r30, r16
+ 206:	80 83       	st	Z, r24
+ 208:	0f c0       	rjmp	.+30     	; 0x228 <SPI_ReceiveString+0x4e>
+	while(Str[i] != '#')
+	{
+		i++;
+ 20a:	89 81       	ldd	r24, Y+1	; 0x01
+ 20c:	8f 5f       	subi	r24, 0xFF	; 255
+ 20e:	89 83       	std	Y+1, r24	; 0x01
+		Str[i] = SPI_recieveByte();
+ 210:	89 81       	ldd	r24, Y+1	; 0x01
+ 212:	28 2f       	mov	r18, r24
+ 214:	30 e0       	ldi	r19, 0x00	; 0
+ 216:	8a 81       	ldd	r24, Y+2	; 0x02
+ 218:	9b 81       	ldd	r25, Y+3	; 0x03
+ 21a:	8c 01       	movw	r16, r24
+ 21c:	02 0f       	add	r16, r18
+ 21e:	13 1f       	adc	r17, r19
+ 220:	0e 94 b5 00 	call	0x16a	; 0x16a <SPI_recieveByte>
+ 224:	f8 01       	movw	r30, r16
+ 226:	80 83       	st	Z, r24
+
+void SPI_ReceiveString(char *Str)
+{
+	unsigned char i = 0;
+	Str[i] = SPI_recieveByte();
+	while(Str[i] != '#')
+ 228:	89 81       	ldd	r24, Y+1	; 0x01
+ 22a:	28 2f       	mov	r18, r24
+ 22c:	30 e0       	ldi	r19, 0x00	; 0
+ 22e:	8a 81       	ldd	r24, Y+2	; 0x02
+ 230:	9b 81       	ldd	r25, Y+3	; 0x03
+ 232:	fc 01       	movw	r30, r24
+ 234:	e2 0f       	add	r30, r18
+ 236:	f3 1f       	adc	r31, r19
+ 238:	80 81       	ld	r24, Z
+ 23a:	83 32       	cpi	r24, 0x23	; 35
+ 23c:	31 f7       	brne	.-52     	; 0x20a <SPI_ReceiveString+0x30>
+	{
+		i++;
+		Str[i] = SPI_recieveByte();
+	}
+	Str[i] = '\0';
+ 23e:	89 81       	ldd	r24, Y+1	; 0x01
+ 240:	28 2f       	mov	r18, r24
+ 242:	30 e0       	ldi	r19, 0x00	; 0
+ 244:	8a 81       	ldd	r24, Y+2	; 0x02
+ 246:	9b 81       	ldd	r25, Y+3	; 0x03
+ 248:	fc 01       	movw	r30, r24
+ 24a:	e2 0f       	add	r30, r18
+ 24c:	f3 1f       	adc	r31, r19
+ 24e:	10 82       	st	Z, r1
+}
+ 250:	0f 90       	pop	r0
+ 252:	0f 90       	pop	r0
+ 254:	0f 90       	pop	r0
+ 256:	cf 91       	pop	r28
+ 258:	df 91       	pop	r29
+ 25a:	1f 91       	pop	r17
+ 25c:	0f 91       	pop	r16
+ 25e:	08 95       	ret
+
+00000260 <_exit>:
+ 260:	f8 94       	cli
+
+00000262 <__stop_program>:
+ 262:	ff cf       	rjmp	.-2      	; 0x262 <__stop_program>

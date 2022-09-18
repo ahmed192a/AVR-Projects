@@ -1,0 +1,203 @@
+
+Exercise1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000140  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000001  00800060  00800060  000001b4  2**0
+                  ALLOC
+  2 .stab         000003c0  00000000  00000000  000001b4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      000006c8  00000000  00000000  00000574  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__vector_9>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a1 36       	cpi	r26, 0x61	; 97
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 82 00 	call	0x104	; 0x104 <main>
+  74:	0c 94 9e 00 	jmp	0x13c	; 0x13c <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <__vector_9>:
+
+/* global variable contain the ticks count of the timer */
+unsigned char g_tick = 0;
+
+ISR(TIMER0_OVF_vect)
+{
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	8f 93       	push	r24
+  88:	9f 93       	push	r25
+  8a:	af 93       	push	r26
+  8c:	bf 93       	push	r27
+  8e:	ef 93       	push	r30
+  90:	ff 93       	push	r31
+  92:	df 93       	push	r29
+  94:	cf 93       	push	r28
+  96:	cd b7       	in	r28, 0x3d	; 61
+  98:	de b7       	in	r29, 0x3e	; 62
+	g_tick++;
+  9a:	80 91 60 00 	lds	r24, 0x0060
+  9e:	8f 5f       	subi	r24, 0xFF	; 255
+  a0:	80 93 60 00 	sts	0x0060, r24
+	if(g_tick == NUMBER_OF_OVERFLOWS_PER_HALF_SECOND)
+  a4:	80 91 60 00 	lds	r24, 0x0060
+  a8:	82 30       	cpi	r24, 0x02	; 2
+  aa:	51 f4       	brne	.+20     	; 0xc0 <__vector_9+0x44>
+	{
+		PORTC = PORTC ^ (1<<PC0); //toggle led every 0.5 second
+  ac:	a5 e3       	ldi	r26, 0x35	; 53
+  ae:	b0 e0       	ldi	r27, 0x00	; 0
+  b0:	e5 e3       	ldi	r30, 0x35	; 53
+  b2:	f0 e0       	ldi	r31, 0x00	; 0
+  b4:	90 81       	ld	r25, Z
+  b6:	81 e0       	ldi	r24, 0x01	; 1
+  b8:	89 27       	eor	r24, r25
+  ba:	8c 93       	st	X, r24
+		g_tick = 0; //clear the tick counter again to count a new 0.5 second
+  bc:	10 92 60 00 	sts	0x0060, r1
+	}
+}
+  c0:	cf 91       	pop	r28
+  c2:	df 91       	pop	r29
+  c4:	ff 91       	pop	r31
+  c6:	ef 91       	pop	r30
+  c8:	bf 91       	pop	r27
+  ca:	af 91       	pop	r26
+  cc:	9f 91       	pop	r25
+  ce:	8f 91       	pop	r24
+  d0:	0f 90       	pop	r0
+  d2:	0f be       	out	0x3f, r0	; 63
+  d4:	0f 90       	pop	r0
+  d6:	1f 90       	pop	r1
+  d8:	18 95       	reti
+
+000000da <timer0_init_normal_mode>:
+ * For clock=1Mhz and prescale F_CPU/1024 every count will take 1ms
+ * so put initial timer counter = 0  0 --> 255 (256ms per overflow)
+ * so we need timer to overflow 2 times to get a 0.5 second 
+ */
+void timer0_init_normal_mode(void)
+{
+  da:	df 93       	push	r29
+  dc:	cf 93       	push	r28
+  de:	cd b7       	in	r28, 0x3d	; 61
+  e0:	de b7       	in	r29, 0x3e	; 62
+	TCNT0 = 0; //Set Timer initial value to 0
+  e2:	e2 e5       	ldi	r30, 0x52	; 82
+  e4:	f0 e0       	ldi	r31, 0x00	; 0
+  e6:	10 82       	st	Z, r1
+	TIMSK |= (1<<TOIE0); // Enable Timer0 Overflow Interrupt
+  e8:	a9 e5       	ldi	r26, 0x59	; 89
+  ea:	b0 e0       	ldi	r27, 0x00	; 0
+  ec:	e9 e5       	ldi	r30, 0x59	; 89
+  ee:	f0 e0       	ldi	r31, 0x00	; 0
+  f0:	80 81       	ld	r24, Z
+  f2:	81 60       	ori	r24, 0x01	; 1
+  f4:	8c 93       	st	X, r24
+	 * 1. Non PWM mode FOC0=1
+	 * 2. Normal Mode WGM01=0 & WGM00=0
+	 * 3. Normal Mode COM00=0 & COM01=0 
+	 * 4. clock = F_CPU/1024 CS00=1 CS01=0 CS02=1
+	 */
+	TCCR0 = (1<<FOC0) | (1<<CS02) | (1<<CS00);
+  f6:	e3 e5       	ldi	r30, 0x53	; 83
+  f8:	f0 e0       	ldi	r31, 0x00	; 0
+  fa:	85 e8       	ldi	r24, 0x85	; 133
+  fc:	80 83       	st	Z, r24
+}
+  fe:	cf 91       	pop	r28
+ 100:	df 91       	pop	r29
+ 102:	08 95       	ret
+
+00000104 <main>:
+
+int main(void)
+{
+ 104:	df 93       	push	r29
+ 106:	cf 93       	push	r28
+ 108:	cd b7       	in	r28, 0x3d	; 61
+ 10a:	de b7       	in	r29, 0x3e	; 62
+	DDRC  |= (1<<PC0);  // Configure the led pin as output pin.
+ 10c:	a4 e3       	ldi	r26, 0x34	; 52
+ 10e:	b0 e0       	ldi	r27, 0x00	; 0
+ 110:	e4 e3       	ldi	r30, 0x34	; 52
+ 112:	f0 e0       	ldi	r31, 0x00	; 0
+ 114:	80 81       	ld	r24, Z
+ 116:	81 60       	ori	r24, 0x01	; 1
+ 118:	8c 93       	st	X, r24
+	PORTC &= ~(1<<PC0); // LED is OFF at the beginning (Positive Logic).
+ 11a:	a5 e3       	ldi	r26, 0x35	; 53
+ 11c:	b0 e0       	ldi	r27, 0x00	; 0
+ 11e:	e5 e3       	ldi	r30, 0x35	; 53
+ 120:	f0 e0       	ldi	r31, 0x00	; 0
+ 122:	80 81       	ld	r24, Z
+ 124:	8e 7f       	andi	r24, 0xFE	; 254
+ 126:	8c 93       	st	X, r24
+	SREG  |= (1<<7);    //Enable global interrupts in MC by setting the I-Bit.
+ 128:	af e5       	ldi	r26, 0x5F	; 95
+ 12a:	b0 e0       	ldi	r27, 0x00	; 0
+ 12c:	ef e5       	ldi	r30, 0x5F	; 95
+ 12e:	f0 e0       	ldi	r31, 0x00	; 0
+ 130:	80 81       	ld	r24, Z
+ 132:	80 68       	ori	r24, 0x80	; 128
+ 134:	8c 93       	st	X, r24
+	timer0_init_normal_mode(); //start the timer.
+ 136:	0e 94 6d 00 	call	0xda	; 0xda <timer0_init_normal_mode>
+ 13a:	ff cf       	rjmp	.-2      	; 0x13a <main+0x36>
+
+0000013c <_exit>:
+ 13c:	f8 94       	cli
+
+0000013e <__stop_program>:
+ 13e:	ff cf       	rjmp	.-2      	; 0x13e <__stop_program>

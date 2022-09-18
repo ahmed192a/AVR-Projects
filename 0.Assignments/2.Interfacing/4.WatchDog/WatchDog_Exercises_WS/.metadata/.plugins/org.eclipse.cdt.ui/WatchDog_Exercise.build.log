@@ -1,0 +1,36 @@
+19:52:18 **** Incremental Build of configuration Debug for project WatchDog_Exercise ****
+make all 
+Building file: ../WatchDog_Exercise.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"WatchDog_Exercise.d" -MT"WatchDog_Exercise.d" -c -o "WatchDog_Exercise.o" "../WatchDog_Exercise.c"
+In file included from ../WatchDog_Exercise.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../WatchDog_Exercise.c
+ 
+Building target: WatchDog_Exercise.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,WatchDog_Exercise.map -mmcu=atmega16 -o "WatchDog_Exercise.elf"  ./WatchDog_Exercise.o   
+Finished building target: WatchDog_Exercise.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S WatchDog_Exercise.elf  >"WatchDog_Exercise.lss"
+Finished building: WatchDog_Exercise.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 WatchDog_Exercise.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4086 bytes (24.9% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:52:19 Build Finished (took 1s.160ms)
+

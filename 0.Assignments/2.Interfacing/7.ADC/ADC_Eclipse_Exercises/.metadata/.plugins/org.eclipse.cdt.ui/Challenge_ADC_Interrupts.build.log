@@ -1,0 +1,58 @@
+01:16:35 **** Incremental Build of configuration Debug for project Challenge_ADC_Interrupts ****
+make all 
+Building file: ../adc.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.c"
+In file included from ../micro_config.h:22,
+                 from ../adc.h:16,
+                 from ../adc.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../adc.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../temp_sensor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"temp_sensor.d" -MT"temp_sensor.d" -c -o "temp_sensor.o" "../temp_sensor.c"
+In file included from ../micro_config.h:22,
+                 from ../adc.h:16,
+                 from ../temp_sensor.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../temp_sensor.c
+ 
+Building target: Challenge_ADC_Interrupts.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_ADC_Interrupts.map -mmcu=atmega16 -o "Challenge_ADC_Interrupts.elf"  ./adc.o ./lcd.o ./temp_sensor.o   
+Finished building target: Challenge_ADC_Interrupts.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_ADC_Interrupts.elf  >"Challenge_ADC_Interrupts.lss"
+Finished building: Challenge_ADC_Interrupts.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_ADC_Interrupts.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6988 bytes (42.7% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (26.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:16:35 Build Finished (took 702ms)
+

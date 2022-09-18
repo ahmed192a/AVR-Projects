@@ -1,0 +1,243 @@
+
+Exercise2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000170  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000003e4  00000000  00000000  000001c4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      000006b5  00000000  00000000  000005a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 52 00 	call	0xa4	; 0xa4 <main>
+  64:	0c 94 b6 00 	jmp	0x16c	; 0x16c <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <PWM_Timer0_Init>:
+  */
+ 
+#include <avr/io.h>
+
+void PWM_Timer0_Init(unsigned char set_duty_cycle)
+{
+  6c:	df 93       	push	r29
+  6e:	cf 93       	push	r28
+  70:	0f 92       	push	r0
+  72:	cd b7       	in	r28, 0x3d	; 61
+  74:	de b7       	in	r29, 0x3e	; 62
+  76:	89 83       	std	Y+1, r24	; 0x01
+	
+	TCNT0 = 0; //Set Timer Initial value
+  78:	e2 e5       	ldi	r30, 0x52	; 82
+  7a:	f0 e0       	ldi	r31, 0x00	; 0
+  7c:	10 82       	st	Z, r1
+	
+	OCR0  = set_duty_cycle; // Set Compare Value
+  7e:	ec e5       	ldi	r30, 0x5C	; 92
+  80:	f0 e0       	ldi	r31, 0x00	; 0
+  82:	89 81       	ldd	r24, Y+1	; 0x01
+  84:	80 83       	st	Z, r24
+	
+	DDRB  = DDRB | (1<<PB3); //set PB3/OC0 as output pin --> pin where the PWM signal is generated from MC.
+  86:	a7 e3       	ldi	r26, 0x37	; 55
+  88:	b0 e0       	ldi	r27, 0x00	; 0
+  8a:	e7 e3       	ldi	r30, 0x37	; 55
+  8c:	f0 e0       	ldi	r31, 0x00	; 0
+  8e:	80 81       	ld	r24, Z
+  90:	88 60       	ori	r24, 0x08	; 8
+  92:	8c 93       	st	X, r24
+	 * 1. Fast PWM mode FOC0=0
+	 * 2. Fast PWM Mode WGM01=1 & WGM00=1
+	 * 3. Clear OC0 when match occurs (non inverted mode) COM00=0 & COM01=1
+	 * 4. clock = F_CPU/8 CS00=0 CS01=1 CS02=0
+	 */
+	TCCR0 = (1<<WGM00) | (1<<WGM01) | (1<<COM01) | (1<<CS01);
+  94:	e3 e5       	ldi	r30, 0x53	; 83
+  96:	f0 e0       	ldi	r31, 0x00	; 0
+  98:	8a e6       	ldi	r24, 0x6A	; 106
+  9a:	80 83       	st	Z, r24
+}
+  9c:	0f 90       	pop	r0
+  9e:	cf 91       	pop	r28
+  a0:	df 91       	pop	r29
+  a2:	08 95       	ret
+
+000000a4 <main>:
+
+int main(void)
+{ 
+  a4:	df 93       	push	r29
+  a6:	cf 93       	push	r28
+  a8:	cd b7       	in	r28, 0x3d	; 61
+  aa:	de b7       	in	r29, 0x3e	; 62
+	PWM_Timer0_Init(128); //generate duty cycle 50% to get half motor speed
+  ac:	80 e8       	ldi	r24, 0x80	; 128
+  ae:	0e 94 36 00 	call	0x6c	; 0x6c <PWM_Timer0_Init>
+	
+	/* configure pin PA0, PA1 and PA2 as input pins */
+	DDRA &= 0xF8;
+  b2:	aa e3       	ldi	r26, 0x3A	; 58
+  b4:	b0 e0       	ldi	r27, 0x00	; 0
+  b6:	ea e3       	ldi	r30, 0x3A	; 58
+  b8:	f0 e0       	ldi	r31, 0x00	; 0
+  ba:	80 81       	ld	r24, Z
+  bc:	88 7f       	andi	r24, 0xF8	; 248
+  be:	8c 93       	st	X, r24
+
+	/* configure pin PC0 and PC1 as output pins */
+	DDRC |= 0x03;
+  c0:	a4 e3       	ldi	r26, 0x34	; 52
+  c2:	b0 e0       	ldi	r27, 0x00	; 0
+  c4:	e4 e3       	ldi	r30, 0x34	; 52
+  c6:	f0 e0       	ldi	r31, 0x00	; 0
+  c8:	80 81       	ld	r24, Z
+  ca:	83 60       	ori	r24, 0x03	; 3
+  cc:	8c 93       	st	X, r24
+	
+	/* Motor is stop at the beginning */
+	PORTC &= 0xFC;
+  ce:	a5 e3       	ldi	r26, 0x35	; 53
+  d0:	b0 e0       	ldi	r27, 0x00	; 0
+  d2:	e5 e3       	ldi	r30, 0x35	; 53
+  d4:	f0 e0       	ldi	r31, 0x00	; 0
+  d6:	80 81       	ld	r24, Z
+  d8:	8c 7f       	andi	r24, 0xFC	; 252
+  da:	8c 93       	st	X, r24
+	 
+    while(1)
+    {
+		/* check if the first push button at PA0 is pressed/not */
+		if(PINA & (1<<PA0))
+  dc:	e9 e3       	ldi	r30, 0x39	; 57
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	80 81       	ld	r24, Z
+  e2:	88 2f       	mov	r24, r24
+  e4:	90 e0       	ldi	r25, 0x00	; 0
+  e6:	81 70       	andi	r24, 0x01	; 1
+  e8:	90 70       	andi	r25, 0x00	; 0
+  ea:	88 23       	and	r24, r24
+  ec:	79 f0       	breq	.+30     	; 0x10c <main+0x68>
+		{
+			// Rotate the motor --> clock wise
+			PORTC &= (~(1<<PC0));
+  ee:	a5 e3       	ldi	r26, 0x35	; 53
+  f0:	b0 e0       	ldi	r27, 0x00	; 0
+  f2:	e5 e3       	ldi	r30, 0x35	; 53
+  f4:	f0 e0       	ldi	r31, 0x00	; 0
+  f6:	80 81       	ld	r24, Z
+  f8:	8e 7f       	andi	r24, 0xFE	; 254
+  fa:	8c 93       	st	X, r24
+			PORTC |= (1<<PC1);
+  fc:	a5 e3       	ldi	r26, 0x35	; 53
+  fe:	b0 e0       	ldi	r27, 0x00	; 0
+ 100:	e5 e3       	ldi	r30, 0x35	; 53
+ 102:	f0 e0       	ldi	r31, 0x00	; 0
+ 104:	80 81       	ld	r24, Z
+ 106:	82 60       	ori	r24, 0x02	; 2
+ 108:	8c 93       	st	X, r24
+ 10a:	e8 cf       	rjmp	.-48     	; 0xdc <main+0x38>
+		}
+		
+		/* check if the second push button at PA1 is pressed/not */
+		else if(PINA & (1<<PA1))
+ 10c:	e9 e3       	ldi	r30, 0x39	; 57
+ 10e:	f0 e0       	ldi	r31, 0x00	; 0
+ 110:	80 81       	ld	r24, Z
+ 112:	88 2f       	mov	r24, r24
+ 114:	90 e0       	ldi	r25, 0x00	; 0
+ 116:	82 70       	andi	r24, 0x02	; 2
+ 118:	90 70       	andi	r25, 0x00	; 0
+ 11a:	00 97       	sbiw	r24, 0x00	; 0
+ 11c:	79 f0       	breq	.+30     	; 0x13c <main+0x98>
+		{
+			// Rotate the motor --> anti-clock wise
+			PORTC |= (1<<PC0);
+ 11e:	a5 e3       	ldi	r26, 0x35	; 53
+ 120:	b0 e0       	ldi	r27, 0x00	; 0
+ 122:	e5 e3       	ldi	r30, 0x35	; 53
+ 124:	f0 e0       	ldi	r31, 0x00	; 0
+ 126:	80 81       	ld	r24, Z
+ 128:	81 60       	ori	r24, 0x01	; 1
+ 12a:	8c 93       	st	X, r24
+			PORTC &= (~(1<<PC1));
+ 12c:	a5 e3       	ldi	r26, 0x35	; 53
+ 12e:	b0 e0       	ldi	r27, 0x00	; 0
+ 130:	e5 e3       	ldi	r30, 0x35	; 53
+ 132:	f0 e0       	ldi	r31, 0x00	; 0
+ 134:	80 81       	ld	r24, Z
+ 136:	8d 7f       	andi	r24, 0xFD	; 253
+ 138:	8c 93       	st	X, r24
+ 13a:	d0 cf       	rjmp	.-96     	; 0xdc <main+0x38>
+		}
+				
+		/* check if the third push button at PA2 is pressed/not */
+		else if(PINA & (1<<PA2))
+ 13c:	e9 e3       	ldi	r30, 0x39	; 57
+ 13e:	f0 e0       	ldi	r31, 0x00	; 0
+ 140:	80 81       	ld	r24, Z
+ 142:	88 2f       	mov	r24, r24
+ 144:	90 e0       	ldi	r25, 0x00	; 0
+ 146:	84 70       	andi	r24, 0x04	; 4
+ 148:	90 70       	andi	r25, 0x00	; 0
+ 14a:	00 97       	sbiw	r24, 0x00	; 0
+ 14c:	39 f2       	breq	.-114    	; 0xdc <main+0x38>
+		{
+			// Stop the motor
+			PORTC &= (~(1<<PC0));
+ 14e:	a5 e3       	ldi	r26, 0x35	; 53
+ 150:	b0 e0       	ldi	r27, 0x00	; 0
+ 152:	e5 e3       	ldi	r30, 0x35	; 53
+ 154:	f0 e0       	ldi	r31, 0x00	; 0
+ 156:	80 81       	ld	r24, Z
+ 158:	8e 7f       	andi	r24, 0xFE	; 254
+ 15a:	8c 93       	st	X, r24
+			PORTC &= (~(1<<PC1));
+ 15c:	a5 e3       	ldi	r26, 0x35	; 53
+ 15e:	b0 e0       	ldi	r27, 0x00	; 0
+ 160:	e5 e3       	ldi	r30, 0x35	; 53
+ 162:	f0 e0       	ldi	r31, 0x00	; 0
+ 164:	80 81       	ld	r24, Z
+ 166:	8d 7f       	andi	r24, 0xFD	; 253
+ 168:	8c 93       	st	X, r24
+ 16a:	b8 cf       	rjmp	.-144    	; 0xdc <main+0x38>
+
+0000016c <_exit>:
+ 16c:	f8 94       	cli
+
+0000016e <__stop_program>:
+ 16e:	ff cf       	rjmp	.-2      	; 0x16e <__stop_program>

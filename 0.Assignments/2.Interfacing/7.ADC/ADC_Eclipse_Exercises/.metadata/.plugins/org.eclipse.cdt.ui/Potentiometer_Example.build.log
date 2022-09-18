@@ -1,0 +1,58 @@
+01:16:36 **** Incremental Build of configuration Debug for project Potentiometer_Example ****
+make all 
+Building file: ../adc.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"adc.d" -MT"adc.d" -c -o "adc.o" "../adc.c"
+In file included from ../micro_config.h:22,
+                 from ../adc.h:16,
+                 from ../adc.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../adc.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../potentiometer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"potentiometer.d" -MT"potentiometer.d" -c -o "potentiometer.o" "../potentiometer.c"
+In file included from ../micro_config.h:22,
+                 from ../adc.h:16,
+                 from ../potentiometer.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../potentiometer.c
+ 
+Building target: Potentiometer_Example.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Potentiometer_Example.map -mmcu=atmega16 -o "Potentiometer_Example.elf"  ./adc.o ./lcd.o ./potentiometer.o   
+Finished building target: Potentiometer_Example.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Potentiometer_Example.elf  >"Potentiometer_Example.lss"
+Finished building: Potentiometer_Example.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Potentiometer_Example.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    5780 bytes (35.3% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:16:37 Build Finished (took 1s.97ms)
+

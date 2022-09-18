@@ -1,0 +1,47 @@
+01:17:28 **** Build of configuration Debug for project Exercise1_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../spi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC2.map -mmcu=atmega16 -o "Exercise1_MC2.elf"  ./MC2.o ./spi.o   
+Finished building target: Exercise1_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC2.elf  >"Exercise1_MC2.lss"
+Finished building: Exercise1_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     630 bytes (3.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:17:29 Build Finished (took 881ms)
+

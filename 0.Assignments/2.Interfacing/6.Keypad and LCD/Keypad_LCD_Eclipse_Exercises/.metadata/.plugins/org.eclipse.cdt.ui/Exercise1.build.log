@@ -1,0 +1,47 @@
+01:15:50 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Building file: ../Exercise1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise1.d" -MT"Exercise1.d" -c -o "Exercise1.o" "../Exercise1.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../Exercise1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Exercise1.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"keypad.d" -MT"keypad.d" -c -o "keypad.o" "../keypad.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../keypad.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../keypad.c
+ 
+Building target: Exercise1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1.map -mmcu=atmega16 -o "Exercise1.elf"  ./Exercise1.o ./keypad.o   
+Finished building target: Exercise1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1.elf  >"Exercise1.lss"
+Finished building: Exercise1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     680 bytes (4.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:15:50 Build Finished (took 523ms)
+

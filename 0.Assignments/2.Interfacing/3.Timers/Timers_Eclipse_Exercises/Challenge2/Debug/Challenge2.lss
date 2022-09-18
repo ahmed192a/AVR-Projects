@@ -1,0 +1,244 @@
+
+Challenge2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000182  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000001  00800060  00800060  000001f6  2**0
+                  ALLOC
+  2 .stab         000003fc  00000000  00000000  000001f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      000006cf  00000000  00000000  000005f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__vector_19>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a1 36       	cpi	r26, 0x61	; 97
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 a3 00 	call	0x146	; 0x146 <main>
+  74:	0c 94 bf 00 	jmp	0x17e	; 0x17e <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <__vector_19>:
+/* global variable contain the ticks count of the timer */
+unsigned char g_tick = 0;
+
+/* Interrupt Service Routine for timer0 compare mode */
+ISR(TIMER0_COMP_vect)
+{
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	8f 93       	push	r24
+  88:	9f 93       	push	r25
+  8a:	af 93       	push	r26
+  8c:	bf 93       	push	r27
+  8e:	ef 93       	push	r30
+  90:	ff 93       	push	r31
+  92:	df 93       	push	r29
+  94:	cf 93       	push	r28
+  96:	cd b7       	in	r28, 0x3d	; 61
+  98:	de b7       	in	r29, 0x3e	; 62
+	g_tick++;
+  9a:	80 91 60 00 	lds	r24, 0x0060
+  9e:	8f 5f       	subi	r24, 0xFF	; 255
+  a0:	80 93 60 00 	sts	0x0060, r24
+
+	PORTC ^= (1<<PC0);     /* Toggle PC0 Pin to generate a 10Khz Clock */
+  a4:	a5 e3       	ldi	r26, 0x35	; 53
+  a6:	b0 e0       	ldi	r27, 0x00	; 0
+  a8:	e5 e3       	ldi	r30, 0x35	; 53
+  aa:	f0 e0       	ldi	r31, 0x00	; 0
+  ac:	90 81       	ld	r25, Z
+  ae:	81 e0       	ldi	r24, 0x01	; 1
+  b0:	89 27       	eor	r24, r25
+  b2:	8c 93       	st	X, r24
+
+	if(g_tick == 2)
+  b4:	80 91 60 00 	lds	r24, 0x0060
+  b8:	82 30       	cpi	r24, 0x02	; 2
+  ba:	49 f4       	brne	.+18     	; 0xce <__vector_19+0x52>
+	{
+		PORTC ^= (1<<PC1); /* Toggle PC1 Pin to generate a 5Khz Clock */
+  bc:	a5 e3       	ldi	r26, 0x35	; 53
+  be:	b0 e0       	ldi	r27, 0x00	; 0
+  c0:	e5 e3       	ldi	r30, 0x35	; 53
+  c2:	f0 e0       	ldi	r31, 0x00	; 0
+  c4:	90 81       	ld	r25, Z
+  c6:	82 e0       	ldi	r24, 0x02	; 2
+  c8:	89 27       	eor	r24, r25
+  ca:	8c 93       	st	X, r24
+  cc:	16 c0       	rjmp	.+44     	; 0xfa <__vector_19+0x7e>
+	}
+	else if(g_tick == 4)
+  ce:	80 91 60 00 	lds	r24, 0x0060
+  d2:	84 30       	cpi	r24, 0x04	; 4
+  d4:	91 f4       	brne	.+36     	; 0xfa <__vector_19+0x7e>
+	{
+		PORTC ^= (1<<PC1); /* Toggle PC1 Pin to generate a 5Khz Clock */
+  d6:	a5 e3       	ldi	r26, 0x35	; 53
+  d8:	b0 e0       	ldi	r27, 0x00	; 0
+  da:	e5 e3       	ldi	r30, 0x35	; 53
+  dc:	f0 e0       	ldi	r31, 0x00	; 0
+  de:	90 81       	ld	r25, Z
+  e0:	82 e0       	ldi	r24, 0x02	; 2
+  e2:	89 27       	eor	r24, r25
+  e4:	8c 93       	st	X, r24
+		PORTC ^= (1<<PC2); /* Toggle PC2 Pin to generate a 2.5Khz Clock */
+  e6:	a5 e3       	ldi	r26, 0x35	; 53
+  e8:	b0 e0       	ldi	r27, 0x00	; 0
+  ea:	e5 e3       	ldi	r30, 0x35	; 53
+  ec:	f0 e0       	ldi	r31, 0x00	; 0
+  ee:	90 81       	ld	r25, Z
+  f0:	84 e0       	ldi	r24, 0x04	; 4
+  f2:	89 27       	eor	r24, r25
+  f4:	8c 93       	st	X, r24
+		g_tick = 0;
+  f6:	10 92 60 00 	sts	0x0060, r1
+	}
+}
+  fa:	cf 91       	pop	r28
+  fc:	df 91       	pop	r29
+  fe:	ff 91       	pop	r31
+ 100:	ef 91       	pop	r30
+ 102:	bf 91       	pop	r27
+ 104:	af 91       	pop	r26
+ 106:	9f 91       	pop	r25
+ 108:	8f 91       	pop	r24
+ 10a:	0f 90       	pop	r0
+ 10c:	0f be       	out	0x3f, r0	; 63
+ 10e:	0f 90       	pop	r0
+ 110:	1f 90       	pop	r1
+ 112:	18 95       	reti
+
+00000114 <Timer0_CTC_Square_Wave_Init>:
+
+void Timer0_CTC_Square_Wave_Init(void)
+{
+ 114:	df 93       	push	r29
+ 116:	cf 93       	push	r28
+ 118:	cd b7       	in	r28, 0x3d	; 61
+ 11a:	de b7       	in	r29, 0x3e	; 62
+	TCNT0 = 0; // Set Timer Initial Value 0
+ 11c:	e2 e5       	ldi	r30, 0x52	; 82
+ 11e:	f0 e0       	ldi	r31, 0x00	; 0
+ 120:	10 82       	st	Z, r1
+	OCR0 = 50; // Set Compare Value
+ 122:	ec e5       	ldi	r30, 0x5C	; 92
+ 124:	f0 e0       	ldi	r31, 0x00	; 0
+ 126:	82 e3       	ldi	r24, 0x32	; 50
+ 128:	80 83       	st	Z, r24
+
+	TIMSK |= (1<<OCIE0); // Enable Timer0 Compare Interrupt
+ 12a:	a9 e5       	ldi	r26, 0x59	; 89
+ 12c:	b0 e0       	ldi	r27, 0x00	; 0
+ 12e:	e9 e5       	ldi	r30, 0x59	; 89
+ 130:	f0 e0       	ldi	r31, 0x00	; 0
+ 132:	80 81       	ld	r24, Z
+ 134:	82 60       	ori	r24, 0x02	; 2
+ 136:	8c 93       	st	X, r24
+	 * 1. Non PWM mode FOC0=1
+	 * 2. CTC Mode WGM01=1 & WGM00=0
+	 * 3. No need for OC0 in this example so COM00=0 & COM01=0
+	 * 4. clock = F_CPU/8 CS00=0 CS01=1 CS02=0
+	 */
+	TCCR0 = (1<<FOC0) | (1<<WGM01) | (1<<CS01);
+ 138:	e3 e5       	ldi	r30, 0x53	; 83
+ 13a:	f0 e0       	ldi	r31, 0x00	; 0
+ 13c:	8a e8       	ldi	r24, 0x8A	; 138
+ 13e:	80 83       	st	Z, r24
+}
+ 140:	cf 91       	pop	r28
+ 142:	df 91       	pop	r29
+ 144:	08 95       	ret
+
+00000146 <main>:
+
+int main(void)
+{
+ 146:	df 93       	push	r29
+ 148:	cf 93       	push	r28
+ 14a:	cd b7       	in	r28, 0x3d	; 61
+ 14c:	de b7       	in	r29, 0x3e	; 62
+	DDRC |= 0x07;   /* Configure PC0, PC1 and PC2 as output pins */
+ 14e:	a4 e3       	ldi	r26, 0x34	; 52
+ 150:	b0 e0       	ldi	r27, 0x00	; 0
+ 152:	e4 e3       	ldi	r30, 0x34	; 52
+ 154:	f0 e0       	ldi	r31, 0x00	; 0
+ 156:	80 81       	ld	r24, Z
+ 158:	87 60       	ori	r24, 0x07	; 7
+ 15a:	8c 93       	st	X, r24
+	PORTC &= 0xF8;  /* Clear PC0, PC1 and PC2 pins */
+ 15c:	a5 e3       	ldi	r26, 0x35	; 53
+ 15e:	b0 e0       	ldi	r27, 0x00	; 0
+ 160:	e5 e3       	ldi	r30, 0x35	; 53
+ 162:	f0 e0       	ldi	r31, 0x00	; 0
+ 164:	80 81       	ld	r24, Z
+ 166:	88 7f       	andi	r24, 0xF8	; 248
+ 168:	8c 93       	st	X, r24
+
+	SREG |= (1<<7); /* Enable global interrupts in MC */
+ 16a:	af e5       	ldi	r26, 0x5F	; 95
+ 16c:	b0 e0       	ldi	r27, 0x00	; 0
+ 16e:	ef e5       	ldi	r30, 0x5F	; 95
+ 170:	f0 e0       	ldi	r31, 0x00	; 0
+ 172:	80 81       	ld	r24, Z
+ 174:	80 68       	ori	r24, 0x80	; 128
+ 176:	8c 93       	st	X, r24
+
+	Timer0_CTC_Square_Wave_Init();
+ 178:	0e 94 8a 00 	call	0x114	; 0x114 <Timer0_CTC_Square_Wave_Init>
+ 17c:	ff cf       	rjmp	.-2      	; 0x17c <main+0x36>
+
+0000017e <_exit>:
+ 17e:	f8 94       	cli
+
+00000180 <__stop_program>:
+ 180:	ff cf       	rjmp	.-2      	; 0x180 <__stop_program>

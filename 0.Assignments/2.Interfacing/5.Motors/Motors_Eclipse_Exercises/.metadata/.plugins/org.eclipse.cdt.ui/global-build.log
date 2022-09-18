@@ -1,0 +1,2951 @@
+22:33:35 **** Incremental Build of configuration Debug for project jhkj ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jhkj.o" "..\\src\\jhkj.c" 
+gcc -o jhkj.exe "src\\jhkj.o" 
+Info: Nothing to build for jhkj
+19:56:53 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:56:55 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:56:57 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:00 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:02 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:31 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:33 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:34 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:37 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:38 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:06 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:07 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:08 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:12 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:13 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:33 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:34 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:36 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:39 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:40 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:53 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:54 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:55 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:58 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:58:59 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:39 **** Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:39 **** Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:40 **** Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:41 **** Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:41 **** Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:59 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:00 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:00 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:01 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:01 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:30 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:30 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:31 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:31 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:31 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:48 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:48 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:48 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:49 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:30:49 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:31:02 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:31:03 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:31:03 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:31:03 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:31:04 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:51 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:51 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:51 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:52 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:52 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:07 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:07 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:07 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:08 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:08 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:38 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:38 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:39 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:39 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:39 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:56 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:57 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:57 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:57 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:16:58 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:18 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:19 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:19 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:20 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:20 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:35 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:35 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:36 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:36 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:39:36 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:03 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:03 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:04 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:04 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:05 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:27 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:27 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:27 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:28 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:28 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:50 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:51 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     362 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:51 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     410 bytes (2.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:52 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:40:52 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:02 **** Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:04 **** Build of configuration Debug for project Exercise1 ****
+make all 
+Building file: ../Exercise1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise1.d" -MT"Exercise1.d" -c -o "Exercise1.o" "../Exercise1.c"
+Finished building: ../Exercise1.c
+ 
+Building target: Exercise1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1.map -mmcu=atmega16 -o "Exercise1.elf"  ./Exercise1.o   
+Finished building target: Exercise1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1.elf  >"Exercise1.lss"
+Finished building: Exercise1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:09 **** Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:11 **** Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:57:12 **** Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:59:00 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Building file: ../Challenge1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Challenge1.d" -MT"Challenge1.d" -c -o "Challenge1.o" "../Challenge1.c"
+In file included from ../Challenge1.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Challenge1.c
+ 
+Building target: Challenge1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge1.map -mmcu=atmega16 -o "Challenge1.elf"  ./Challenge1.o   
+Finished building target: Challenge1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge1.elf  >"Challenge1.lss"
+Finished building: Challenge1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:59:02 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:59:03 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:59:03 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../Exercise3.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise3.d" -MT"Exercise3.d" -c -o "Exercise3.o" "../Exercise3.c"
+In file included from ../Exercise3.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Exercise3.c
+ 
+Building target: Exercise3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise3.map -mmcu=atmega16 -o "Exercise3.elf"  ./Exercise3.o   
+Finished building target: Exercise3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise3.elf  >"Exercise3.lss"
+Finished building: Exercise3.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:59:05 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:34:06 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:34:07 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Building file: ../Exercise1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise1.d" -MT"Exercise1.d" -c -o "Exercise1.o" "../Exercise1.c"
+Finished building: ../Exercise1.c
+ 
+Building target: Exercise1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1.map -mmcu=atmega16 -o "Exercise1.elf"  ./Exercise1.o   
+Finished building target: Exercise1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1.elf  >"Exercise1.lss"
+Finished building: Exercise1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:34:09 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:34:10 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:34:10 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:08 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:08 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:08 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:09 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:09 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:32 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:32 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:32 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:33 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:33 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:49 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:49 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:49 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:50 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:50 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:06 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:07 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:07 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:07 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:08 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:42 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:42 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:43 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:43 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:43 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:56 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:57 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:57 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Building file: ../Exercise2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Exercise2.d" -MT"Exercise2.d" -c -o "Exercise2.o" "../Exercise2.c"
+Finished building: ../Exercise2.c
+ 
+Building target: Exercise2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2.map -mmcu=atmega16 -o "Exercise2.elf"  ./Exercise2.o   
+Finished building target: Exercise2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2.elf  >"Exercise2.lss"
+Finished building: Exercise2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:58 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:37:58 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:04:53 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:04:53 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:04:54 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:04:54 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:04:54 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:03:04 **** Incremental Build of configuration Debug for project Challenge1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3396 bytes (20.7% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:03:05 **** Incremental Build of configuration Debug for project Exercise1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     306 bytes (1.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:03:05 **** Incremental Build of configuration Debug for project Exercise2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     368 bytes (2.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:03:05 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3408 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:03:06 **** Incremental Build of configuration Debug for project Exercise4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise4.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3808 bytes (23.2% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

@@ -1,0 +1,17 @@
+12:06:04 **** Incremental Build of configuration Debug for project EEPROM_I2C ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 EEPROM_I2C.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4582 bytes (28.0% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

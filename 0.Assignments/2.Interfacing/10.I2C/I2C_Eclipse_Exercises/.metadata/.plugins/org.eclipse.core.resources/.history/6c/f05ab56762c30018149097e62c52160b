@@ -1,0 +1,17 @@
+/*
+ ============================================================================
+ Name        : Ec1.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+
+int main(void) {
+ char Array[][10] = {"Apple", "Orange", "Banana"};
+ const char * ptr = &Array[0];
+ printf("%d",sizeof(Array[1]));
+}

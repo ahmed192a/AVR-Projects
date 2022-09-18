@@ -1,0 +1,56 @@
+01:17:25 **** Build of configuration Debug for project Challenge_MC1 ****
+make all 
+Building file: ../Keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Keypad.d" -MT"Keypad.d" -c -o "Keypad.o" "../Keypad.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../Keypad.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Keypad.c
+ 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC1.map -mmcu=atmega16 -o "Challenge_MC1.elf"  ./Keypad.o ./MC1.o ./spi.o   
+Finished building target: Challenge_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC1.elf  >"Challenge_MC1.lss"
+Finished building: Challenge_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4206 bytes (25.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:17:26 Build Finished (took 702ms)
+

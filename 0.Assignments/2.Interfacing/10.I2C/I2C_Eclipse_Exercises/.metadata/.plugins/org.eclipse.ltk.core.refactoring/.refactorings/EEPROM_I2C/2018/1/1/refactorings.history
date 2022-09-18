@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;EEPROM_I2C/External_EEPROM.h&apos; to &apos;external_eeprom.h&apos;" description="Rename resource &apos;External_EEPROM.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="External_EEPROM.h" name="external_eeprom.h" stamp="1515089387674" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;EEPROM_I2C/External_EEPROM.c&apos; to &apos;external_eeprom.c&apos;" description="Rename resource &apos;External_EEPROM.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="External_EEPROM.c" name="external_eeprom.c" stamp="1515089400869" updateReferences="true"/>
+</session>

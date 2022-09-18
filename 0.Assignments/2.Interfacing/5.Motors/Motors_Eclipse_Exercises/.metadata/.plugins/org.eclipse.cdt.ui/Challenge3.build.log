@@ -1,0 +1,36 @@
+18:08:57 **** Build of configuration Debug for project Challenge3 ****
+make all 
+Building file: ../Challenge3.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Challenge3.d" -MT"Challenge3.d" -c -o "Challenge3.o" "../Challenge3.c"
+In file included from ../Challenge3.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Challenge3.c
+ 
+Building target: Challenge3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge3.map -mmcu=atmega16 -o "Challenge3.elf"  ./Challenge3.o   
+Finished building target: Challenge3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge3.elf  >"Challenge3.lss"
+Finished building: Challenge3.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3410 bytes (20.8% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (1.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:08:57 Build Finished (took 704ms)
+

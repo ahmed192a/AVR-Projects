@@ -1,0 +1,955 @@
+19:58:11 **** Build of configuration Debug for project Challenge_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC2.map -mmcu=atmega16 -o "Challenge_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Challenge_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC2.elf  >"Challenge_MC2.lss"
+Finished building: Challenge_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6060 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:09:44 **** Build of configuration Debug for project Challenge_MC1 ****
+make all 
+Building file: ../Keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Keypad.d" -MT"Keypad.d" -c -o "Keypad.o" "../Keypad.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../Keypad.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Keypad.c
+ 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC1.map -mmcu=atmega16 -o "Challenge_MC1.elf"  ./Keypad.o ./MC1.o ./spi.o   
+Finished building target: Challenge_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC1.elf  >"Challenge_MC1.lss"
+Finished building: Challenge_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4206 bytes (25.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:09:47 **** Build of configuration Debug for project Challenge_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC2.map -mmcu=atmega16 -o "Challenge_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Challenge_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC2.elf  >"Challenge_MC2.lss"
+Finished building: Challenge_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6060 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:09:50 **** Build of configuration Debug for project Exercise1_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC1.map -mmcu=atmega16 -o "Exercise1_MC1.elf"  ./MC1.o ./spi.o   
+Finished building target: Exercise1_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC1.elf  >"Exercise1_MC1.lss"
+Finished building: Exercise1_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     612 bytes (3.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:09:51 **** Build of configuration Debug for project Exercise1_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../spi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC2.map -mmcu=atmega16 -o "Exercise1_MC2.elf"  ./MC2.o ./spi.o   
+Finished building target: Exercise1_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC2.elf  >"Exercise1_MC2.lss"
+Finished building: Exercise1_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     630 bytes (3.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:09:53 **** Build of configuration Debug for project Exercise2_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC1.c: In function 'main':
+../MC1.c:14: warning: implicit declaration of function 'SPI_SendString'
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise2_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2_MC1.map -mmcu=atmega16 -o "Exercise2_MC1.elf"  ./MC1.o ./spi.o   
+Finished building target: Exercise2_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2_MC1.elf  >"Exercise2_MC1.lss"
+Finished building: Exercise2_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3708 bytes (22.6% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:09:54 **** Build of configuration Debug for project Exercise2_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC2.c: In function 'main':
+../MC2.c:18: warning: implicit declaration of function 'SPI_ReceiveString'
+../MC2.c:20: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise2_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2_MC2.map -mmcu=atmega16 -o "Exercise2_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Exercise2_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2_MC2.elf  >"Exercise2_MC2.lss"
+Finished building: Exercise2_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6056 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:05 **** Build of configuration Debug for project Challenge_MC1 ****
+make all 
+Building file: ../Keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Keypad.d" -MT"Keypad.d" -c -o "Keypad.o" "../Keypad.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../Keypad.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Keypad.c
+ 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC1.map -mmcu=atmega16 -o "Challenge_MC1.elf"  ./Keypad.o ./MC1.o ./spi.o   
+Finished building target: Challenge_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC1.elf  >"Challenge_MC1.lss"
+Finished building: Challenge_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4206 bytes (25.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:07 **** Build of configuration Debug for project Challenge_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC2.map -mmcu=atmega16 -o "Challenge_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Challenge_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC2.elf  >"Challenge_MC2.lss"
+Finished building: Challenge_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6060 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:08 **** Build of configuration Debug for project Exercise1_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC1.map -mmcu=atmega16 -o "Exercise1_MC1.elf"  ./MC1.o ./spi.o   
+Finished building target: Exercise1_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC1.elf  >"Exercise1_MC1.lss"
+Finished building: Exercise1_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     612 bytes (3.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:09 **** Build of configuration Debug for project Exercise1_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../spi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC2.map -mmcu=atmega16 -o "Exercise1_MC2.elf"  ./MC2.o ./spi.o   
+Finished building target: Exercise1_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC2.elf  >"Exercise1_MC2.lss"
+Finished building: Exercise1_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     630 bytes (3.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:10 **** Build of configuration Debug for project Exercise2_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC1.c: In function 'main':
+../MC1.c:14: warning: implicit declaration of function 'SPI_SendString'
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise2_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2_MC1.map -mmcu=atmega16 -o "Exercise2_MC1.elf"  ./MC1.o ./spi.o   
+Finished building target: Exercise2_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2_MC1.elf  >"Exercise2_MC1.lss"
+Finished building: Exercise2_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3708 bytes (22.6% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:11 **** Build of configuration Debug for project Exercise2_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC2.c: In function 'main':
+../MC2.c:18: warning: implicit declaration of function 'SPI_ReceiveString'
+../MC2.c:20: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise2_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2_MC2.map -mmcu=atmega16 -o "Exercise2_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Exercise2_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2_MC2.elf  >"Exercise2_MC2.lss"
+Finished building: Exercise2_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6056 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:17:25 **** Build of configuration Debug for project Challenge_MC1 ****
+make all 
+Building file: ../Keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Keypad.d" -MT"Keypad.d" -c -o "Keypad.o" "../Keypad.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../Keypad.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../Keypad.c
+ 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../keypad.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC1.map -mmcu=atmega16 -o "Challenge_MC1.elf"  ./Keypad.o ./MC1.o ./spi.o   
+Finished building target: Challenge_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC1.elf  >"Challenge_MC1.lss"
+Finished building: Challenge_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4206 bytes (25.7% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:17:27 **** Build of configuration Debug for project Challenge_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Challenge_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Challenge_MC2.map -mmcu=atmega16 -o "Challenge_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Challenge_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Challenge_MC2.elf  >"Challenge_MC2.lss"
+Finished building: Challenge_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Challenge_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6060 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:17:28 **** Build of configuration Debug for project Exercise1_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC1.map -mmcu=atmega16 -o "Exercise1_MC1.elf"  ./MC1.o ./spi.o   
+Finished building target: Exercise1_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC1.elf  >"Exercise1_MC1.lss"
+Finished building: Exercise1_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     612 bytes (3.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:17:28 **** Build of configuration Debug for project Exercise1_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MC2.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:12,
+                 from ../spi.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise1_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise1_MC2.map -mmcu=atmega16 -o "Exercise1_MC2.elf"  ./MC2.o ./spi.o   
+Finished building target: Exercise1_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise1_MC2.elf  >"Exercise1_MC2.lss"
+Finished building: Exercise1_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise1_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     630 bytes (3.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:17:29 **** Build of configuration Debug for project Exercise2_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC1.c: In function 'main':
+../MC1.c:14: warning: implicit declaration of function 'SPI_SendString'
+Finished building: ../MC1.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise2_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2_MC1.map -mmcu=atmega16 -o "Exercise2_MC1.elf"  ./MC1.o ./spi.o   
+Finished building target: Exercise2_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2_MC1.elf  >"Exercise2_MC1.lss"
+Finished building: Exercise2_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3708 bytes (22.6% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (2.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+01:17:30 **** Build of configuration Debug for project Exercise2_MC2 ****
+make all 
+Building file: ../MC2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC2.d" -MT"MC2.d" -c -o "MC2.o" "../MC2.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../MC2.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC2.c: In function 'main':
+../MC2.c:18: warning: implicit declaration of function 'SPI_ReceiveString'
+../MC2.c:20: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../MC2.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.d" -c -o "lcd.o" "../lcd.c"
+In file included from ../micro_config.h:22,
+                 from ../lcd.h:18,
+                 from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:107: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"spi.d" -MT"spi.d" -c -o "spi.o" "../spi.c"
+In file included from ../micro_config.h:22,
+                 from ../spi.h:17,
+                 from ../spi.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../spi.c
+ 
+Building target: Exercise2_MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise2_MC2.map -mmcu=atmega16 -o "Exercise2_MC2.elf"  ./MC2.o ./lcd.o ./spi.o   
+Finished building target: Exercise2_MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise2_MC2.elf  >"Exercise2_MC2.lss"
+Finished building: Exercise2_MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise2_MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6056 bytes (37.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

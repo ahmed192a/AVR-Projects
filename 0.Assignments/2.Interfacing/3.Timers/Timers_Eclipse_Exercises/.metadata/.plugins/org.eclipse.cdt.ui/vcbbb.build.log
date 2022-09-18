@@ -1,0 +1,10 @@
+16:48:56 **** Incremental Build of configuration Debug for project vcbbb ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\vcbbb.o" "..\\src\\vcbbb.c" 
+gcc -o vcbbb.exe "src\\vcbbb.o" 
+src\vcbbb.o: In function `main':
+D:\MT\My Courses\Embedded_Diploma_2019\4.Interfacing AVR Microcontrollers\4.Timers\Timers_Eclipse_Exercises\vcbbb\Debug/../src/vcbbb.c:25: undefined reference to `max'
+collect2.exe: error: ld returned 1 exit status
+
+16:48:56 Build Finished (took 367ms)
+

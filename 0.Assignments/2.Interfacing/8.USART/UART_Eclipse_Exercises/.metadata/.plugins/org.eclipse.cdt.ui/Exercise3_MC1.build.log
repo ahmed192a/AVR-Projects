@@ -1,0 +1,49 @@
+01:17:06 **** Incremental Build of configuration Debug for project Exercise3_MC1 ****
+make all 
+Building file: ../MC1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MC1.d" -MT"MC1.d" -c -o "MC1.o" "../MC1.c"
+In file included from ../micro_config.h:22,
+                 from ../uart.h:16,
+                 from ../MC1.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../MC1.c: In function 'main':
+../MC1.c:16: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+Finished building: ../MC1.c
+ 
+Building file: ../uart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"uart.d" -MT"uart.d" -c -o "uart.o" "../uart.c"
+In file included from ../micro_config.h:22,
+                 from ../uart.h:16,
+                 from ../uart.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../uart.c
+ 
+Building target: Exercise3_MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise3_MC1.map -mmcu=atmega16 -o "Exercise3_MC1.elf"  ./MC1.o ./uart.o   
+Finished building target: Exercise3_MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise3_MC1.elf  >"Exercise3_MC1.lss"
+Finished building: Exercise3_MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Exercise3_MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:     522 bytes (3.2% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:17:07 Build Finished (took 517ms)
+

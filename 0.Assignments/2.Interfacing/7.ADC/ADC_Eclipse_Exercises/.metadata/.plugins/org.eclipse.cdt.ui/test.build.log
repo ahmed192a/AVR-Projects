@@ -1,0 +1,30 @@
+12:26:26 **** Incremental Build of configuration Debug for project test ****
+make all 
+Building file: ../Temp_Sensor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Temp_Sensor.d" -MT"Temp_Sensor.d" -c -o "Temp_Sensor.o" "../Temp_Sensor.c"
+../Temp_Sensor.c:1: error: stray '\357' in program
+../Temp_Sensor.c:1: error: stray '\273' in program
+../Temp_Sensor.c:1: error: stray '\277' in program
+../Temp_Sensor.c:1: error: stray '#' in program
+In file included from ../lcd.h:11,
+                 from ../Temp_Sensor.c:2:
+../Temp_Sensor.c:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before string constant
+In file included from ../micro_config.h:19,
+                 from ../lcd.h:13,
+                 from ../Temp_Sensor.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../Temp_Sensor.c:2:
+../lcd.h:41: error: expected ')' before 'command'
+../lcd.h:42: error: expected ')' before 'data'
+../lcd.h:46: error: expected ')' before 'row'
+../lcd.h:47: error: expected ')' before 'row'
+../Temp_Sensor.c: In function 'main':
+../Temp_Sensor.c:8: warning: implicit declaration of function 'ADC_init'
+../Temp_Sensor.c:12: warning: implicit declaration of function 'LCD_goToRowColumn'
+../Temp_Sensor.c:13: warning: implicit declaration of function 'LCD_displayCharacter'
+../Temp_Sensor.c:17: warning: implicit declaration of function 'ADC_read'
+make: *** [Temp_Sensor.o] Error 1
+
+12:26:28 Build Finished (took 1s.815ms)
+

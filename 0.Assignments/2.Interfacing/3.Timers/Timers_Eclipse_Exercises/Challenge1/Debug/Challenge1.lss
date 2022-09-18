@@ -1,0 +1,238 @@
+
+Challenge1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000017e  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000002  00800060  00800060  000001f2  2**0
+                  ALLOC
+  2 .stab         000003fc  00000000  00000000  000001f4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      000006d7  00000000  00000000  000005f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__vector_9>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a2 36       	cpi	r26, 0x62	; 98
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 a1 00 	call	0x142	; 0x142 <main>
+  74:	0c 94 bd 00 	jmp	0x17a	; 0x17a <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <Timer_init_Normal_Mode>:
+ * so put initial timer counter=0  0 --> 255 (256 * 32us = 8.192 ms per overflow)
+ * so we need timer to overflow 123 times to get a 1 second 
+ */
+ 
+void Timer_init_Normal_Mode(void)
+{
+  7c:	df 93       	push	r29
+  7e:	cf 93       	push	r28
+  80:	cd b7       	in	r28, 0x3d	; 61
+  82:	de b7       	in	r29, 0x3e	; 62
+	TCNT0 = 0; // Set Timer initial value to 0
+  84:	e2 e5       	ldi	r30, 0x52	; 82
+  86:	f0 e0       	ldi	r31, 0x00	; 0
+  88:	10 82       	st	Z, r1
+	TIMSK = (1<<TOIE0); // Enable Timer0 Overflow Interrupt
+  8a:	e9 e5       	ldi	r30, 0x59	; 89
+  8c:	f0 e0       	ldi	r31, 0x00	; 0
+  8e:	81 e0       	ldi	r24, 0x01	; 1
+  90:	80 83       	st	Z, r24
+	 * 1. Non PWM mode FOC0=1
+	 * 2. Normal Mode WGM01=0 & WGM00=0
+	 * 3. Normal Mode COM00=0 & COM01=0 
+	 * 4. clock = F_CPU/256 CS00=0 CS01=0 CS02=1
+	 */
+	TCCR0 = (1<<FOC0) | (1<<CS02);
+  92:	e3 e5       	ldi	r30, 0x53	; 83
+  94:	f0 e0       	ldi	r31, 0x00	; 0
+  96:	84 e8       	ldi	r24, 0x84	; 132
+  98:	80 83       	st	Z, r24
+}
+  9a:	cf 91       	pop	r28
+  9c:	df 91       	pop	r29
+  9e:	08 95       	ret
+
+000000a0 <__vector_9>:
+
+ISR(TIMER0_OVF_vect)
+{
+  a0:	1f 92       	push	r1
+  a2:	0f 92       	push	r0
+  a4:	0f b6       	in	r0, 0x3f	; 63
+  a6:	0f 92       	push	r0
+  a8:	11 24       	eor	r1, r1
+  aa:	8f 93       	push	r24
+  ac:	9f 93       	push	r25
+  ae:	af 93       	push	r26
+  b0:	bf 93       	push	r27
+  b2:	ef 93       	push	r30
+  b4:	ff 93       	push	r31
+  b6:	df 93       	push	r29
+  b8:	cf 93       	push	r28
+  ba:	cd b7       	in	r28, 0x3d	; 61
+  bc:	de b7       	in	r29, 0x3e	; 62
+	g_tick++;
+  be:	80 91 60 00 	lds	r24, 0x0060
+  c2:	8f 5f       	subi	r24, 0xFF	; 255
+  c4:	80 93 60 00 	sts	0x0060, r24
+	if(g_tick == NUMBER_OF_OVERFLOWS_PER_SECOND)
+  c8:	80 91 60 00 	lds	r24, 0x0060
+  cc:	8b 37       	cpi	r24, 0x7B	; 123
+  ce:	61 f5       	brne	.+88     	; 0x128 <__vector_9+0x88>
+	{
+
+		// check if overflow occurs at the 7-segment as its maximum count is 9
+		if((PORTC & 0x0F) == 9)
+  d0:	e5 e3       	ldi	r30, 0x35	; 53
+  d2:	f0 e0       	ldi	r31, 0x00	; 0
+  d4:	80 81       	ld	r24, Z
+  d6:	88 2f       	mov	r24, r24
+  d8:	90 e0       	ldi	r25, 0x00	; 0
+  da:	8f 70       	andi	r24, 0x0F	; 15
+  dc:	90 70       	andi	r25, 0x00	; 0
+  de:	89 30       	cpi	r24, 0x09	; 9
+  e0:	91 05       	cpc	r25, r1
+  e2:	79 f4       	brne	.+30     	; 0x102 <__vector_9+0x62>
+		{
+			g_num = 0;
+  e4:	10 92 61 00 	sts	0x0061, r1
+			PORTC = (PORTC & 0xF0) | (g_num & 0x0F);
+  e8:	a5 e3       	ldi	r26, 0x35	; 53
+  ea:	b0 e0       	ldi	r27, 0x00	; 0
+  ec:	e5 e3       	ldi	r30, 0x35	; 53
+  ee:	f0 e0       	ldi	r31, 0x00	; 0
+  f0:	80 81       	ld	r24, Z
+  f2:	98 2f       	mov	r25, r24
+  f4:	90 7f       	andi	r25, 0xF0	; 240
+  f6:	80 91 61 00 	lds	r24, 0x0061
+  fa:	8f 70       	andi	r24, 0x0F	; 15
+  fc:	89 2b       	or	r24, r25
+  fe:	8c 93       	st	X, r24
+ 100:	11 c0       	rjmp	.+34     	; 0x124 <__vector_9+0x84>
+		}
+		else
+		{
+			// increment 7-segment every interrupt
+			g_num++;
+ 102:	80 91 61 00 	lds	r24, 0x0061
+ 106:	8f 5f       	subi	r24, 0xFF	; 255
+ 108:	80 93 61 00 	sts	0x0061, r24
+			PORTC = (PORTC & 0xF0) | (g_num & 0x0F);
+ 10c:	a5 e3       	ldi	r26, 0x35	; 53
+ 10e:	b0 e0       	ldi	r27, 0x00	; 0
+ 110:	e5 e3       	ldi	r30, 0x35	; 53
+ 112:	f0 e0       	ldi	r31, 0x00	; 0
+ 114:	80 81       	ld	r24, Z
+ 116:	98 2f       	mov	r25, r24
+ 118:	90 7f       	andi	r25, 0xF0	; 240
+ 11a:	80 91 61 00 	lds	r24, 0x0061
+ 11e:	8f 70       	andi	r24, 0x0F	; 15
+ 120:	89 2b       	or	r24, r25
+ 122:	8c 93       	st	X, r24
+		}
+		g_tick=0; // reset the ticks counter
+ 124:	10 92 60 00 	sts	0x0060, r1
+	}	
+}
+ 128:	cf 91       	pop	r28
+ 12a:	df 91       	pop	r29
+ 12c:	ff 91       	pop	r31
+ 12e:	ef 91       	pop	r30
+ 130:	bf 91       	pop	r27
+ 132:	af 91       	pop	r26
+ 134:	9f 91       	pop	r25
+ 136:	8f 91       	pop	r24
+ 138:	0f 90       	pop	r0
+ 13a:	0f be       	out	0x3f, r0	; 63
+ 13c:	0f 90       	pop	r0
+ 13e:	1f 90       	pop	r1
+ 140:	18 95       	reti
+
+00000142 <main>:
+
+int main(void)
+{
+ 142:	df 93       	push	r29
+ 144:	cf 93       	push	r28
+ 146:	cd b7       	in	r28, 0x3d	; 61
+ 148:	de b7       	in	r29, 0x3e	; 62
+	DDRC  |= 0x0F;     // Configure the first four pins in PORTC as output pins.
+ 14a:	a4 e3       	ldi	r26, 0x34	; 52
+ 14c:	b0 e0       	ldi	r27, 0x00	; 0
+ 14e:	e4 e3       	ldi	r30, 0x34	; 52
+ 150:	f0 e0       	ldi	r31, 0x00	; 0
+ 152:	80 81       	ld	r24, Z
+ 154:	8f 60       	ori	r24, 0x0F	; 15
+ 156:	8c 93       	st	X, r24
+	PORTC &= 0xF0;     // Initialize the 7-seg display zero at the beginning.
+ 158:	a5 e3       	ldi	r26, 0x35	; 53
+ 15a:	b0 e0       	ldi	r27, 0x00	; 0
+ 15c:	e5 e3       	ldi	r30, 0x35	; 53
+ 15e:	f0 e0       	ldi	r31, 0x00	; 0
+ 160:	80 81       	ld	r24, Z
+ 162:	80 7f       	andi	r24, 0xF0	; 240
+ 164:	8c 93       	st	X, r24
+	SREG  |= (1<<7);   // Enable global interrupts in MC.
+ 166:	af e5       	ldi	r26, 0x5F	; 95
+ 168:	b0 e0       	ldi	r27, 0x00	; 0
+ 16a:	ef e5       	ldi	r30, 0x5F	; 95
+ 16c:	f0 e0       	ldi	r31, 0x00	; 0
+ 16e:	80 81       	ld	r24, Z
+ 170:	80 68       	ori	r24, 0x80	; 128
+ 172:	8c 93       	st	X, r24
+	Timer_init_Normal_Mode(); // Start the timer.
+ 174:	0e 94 3e 00 	call	0x7c	; 0x7c <Timer_init_Normal_Mode>
+ 178:	ff cf       	rjmp	.-2      	; 0x178 <main+0x36>
+
+0000017a <_exit>:
+ 17a:	f8 94       	cli
+
+0000017c <__stop_program>:
+ 17c:	ff cf       	rjmp	.-2      	; 0x17c <__stop_program>

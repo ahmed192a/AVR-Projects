@@ -1,0 +1,110 @@
+
+Exercise3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b0  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         00000348  00000000  00000000  00000104  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      000006aa  00000000  00000000  0000044c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 4f 00 	call	0x9e	; 0x9e <main>
+  64:	0c 94 56 00 	jmp	0xac	; 0xac <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <Timer0_CTC_Square_Wave_Init>:
+ */ 
+
+#include <avr/io.h>
+
+void Timer0_CTC_Square_Wave_Init(void)
+{
+  6c:	df 93       	push	r29
+  6e:	cf 93       	push	r28
+  70:	cd b7       	in	r28, 0x3d	; 61
+  72:	de b7       	in	r29, 0x3e	; 62
+	TCNT0 = 0;  // Set Initial Value to 0
+  74:	e2 e5       	ldi	r30, 0x52	; 82
+  76:	f0 e0       	ldi	r31, 0x00	; 0
+  78:	10 82       	st	Z, r1
+	OCR0 = 250; // Set Compare Value
+  7a:	ec e5       	ldi	r30, 0x5C	; 92
+  7c:	f0 e0       	ldi	r31, 0x00	; 0
+  7e:	8a ef       	ldi	r24, 0xFA	; 250
+  80:	80 83       	st	Z, r24
+	DDRB = DDRB | (1<<PB3); // Configure PB3/OC0 Pin as output pin
+  82:	a7 e3       	ldi	r26, 0x37	; 55
+  84:	b0 e0       	ldi	r27, 0x00	; 0
+  86:	e7 e3       	ldi	r30, 0x37	; 55
+  88:	f0 e0       	ldi	r31, 0x00	; 0
+  8a:	80 81       	ld	r24, Z
+  8c:	88 60       	ori	r24, 0x08	; 8
+  8e:	8c 93       	st	X, r24
+	 * 1. Non PWM mode FOC0=1
+	 * 2. CTC Mode WGM01=1 & WGM00=0
+	 * 3. Toggle OC0 on compare match COM00=1 & COM01=0 
+	 * 4. clock = CPU clock CS00=1 CS01=0 CS02=0
+	 */ 
+	TCCR0 = (1<<FOC0) | (1<<WGM01) | (1<<COM00) | (1<<CS00);
+  90:	e3 e5       	ldi	r30, 0x53	; 83
+  92:	f0 e0       	ldi	r31, 0x00	; 0
+  94:	89 e9       	ldi	r24, 0x99	; 153
+  96:	80 83       	st	Z, r24
+}
+  98:	cf 91       	pop	r28
+  9a:	df 91       	pop	r29
+  9c:	08 95       	ret
+
+0000009e <main>:
+
+int main(void)
+{
+  9e:	df 93       	push	r29
+  a0:	cf 93       	push	r28
+  a2:	cd b7       	in	r28, 0x3d	; 61
+  a4:	de b7       	in	r29, 0x3e	; 62
+	Timer0_CTC_Square_Wave_Init();
+  a6:	0e 94 36 00 	call	0x6c	; 0x6c <Timer0_CTC_Square_Wave_Init>
+  aa:	ff cf       	rjmp	.-2      	; 0xaa <main+0xc>
+
+000000ac <_exit>:
+  ac:	f8 94       	cli
+
+000000ae <__stop_program>:
+  ae:	ff cf       	rjmp	.-2      	; 0xae <__stop_program>
