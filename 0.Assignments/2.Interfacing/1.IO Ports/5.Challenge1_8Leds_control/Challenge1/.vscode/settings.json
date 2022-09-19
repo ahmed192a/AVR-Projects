@@ -1,0 +1,12 @@
+{
+    "AVR.reporter.arguments": [
+        "-C"
+    ],
+    "AVR.source.compiler": "C:\\WinAVR-20100110\\bin\\avr-gcc.exe",
+    "AVR.programmer.tool": "C:\\WinAVR-20100110\\bin\\avrdude.exe",
+    "AVR.source.libraries": [
+        "C:\\WinAVR-20100110\\lib"
+    ],
+    "AVR.device.type": "atmega16",
+    "AVR.device.frequency": 1000000
+}
